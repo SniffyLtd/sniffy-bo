@@ -12,6 +12,12 @@
     <dependent-module archiveName="application-bo-core.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/application-bo-core/application-bo-core">
       <dependency-type>uses</dependency-type>
     </dependent-module>
+    <dependent-module archiveName="application-bo-crawler-api.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/application-bo-crawler-api/application-bo-crawler-api">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="application-bo-mobile-api.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/application-bo-mobile-api/application-bo-mobile-api">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
     <dependent-module archiveName="aspectjrt-1.7.0.RC1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/aspectj/aspectjrt/1.7.0.RC1/aspectjrt-1.7.0.RC1.jar">
       <dependency-type>uses</dependency-type>
     </dependent-module>
@@ -76,6 +82,9 @@
       <dependency-type>uses</dependency-type>
     </dependent-module>
     <dependent-module archiveName="joda-time-1.6.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/joda-time/joda-time/1.6/joda-time-1.6.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="json-20090211.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/json/json/20090211/json-20090211.jar">
       <dependency-type>uses</dependency-type>
     </dependent-module>
     <dependent-module archiveName="jstl-api-1.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/javax/servlet/jsp/jstl/jstl-api/1.2/jstl-api-1.2.jar">

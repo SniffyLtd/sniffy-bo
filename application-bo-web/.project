@@ -3,6 +3,8 @@
   <comment/>
   <projects>
     <project>application-bo-core</project>
+    <project>application-bo-crawler-api</project>
+    <project>application-bo-mobile-api</project>
   </projects>
   <buildSpec>
     <buildCommand>

@@ -76,3 +76,9 @@ dependency add --groupId com.brand.application.bo.core --artifactId application-
 module focus --moduleName application-bo-web  
 dependency add --groupId com.brand.application.bo.mobile --artifactId application-bo-mobile-api --version 0.1.0.BUILD-SNAPSHOT
 dependency add --groupId com.brand.application.bo.crawler --artifactId application-bo-crawler-api --version 0.1.0.BUILD-SNAPSHOT
+module focus --moduleName application-bo-mobile-api  
+dependency add --groupId org.json --artifactId json --version 20090211
+module focus --moduleName application-bo-core  
+dependency add --groupId org.json --artifactId json --version 20090211
+exit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-08-13 22:52:05
