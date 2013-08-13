@@ -65,3 +65,14 @@ module focus --moduleName ~
 // script script.roo
 exit
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-08-13 21:31:53
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-08-13 21:38:54
+module focus --moduleName application-bo-crawler-api 
+dependency add --groupId org.springframework --artifactId spring-webmvc --version ${spring.version}
+module focus --moduleName application-bo-mobile-api  
+dependency add --groupId org.springframework --artifactId spring-webmvc --version ${spring.version}
+dependency add --groupId com.brand.application.bo.core --artifactId application-bo-core --version 0.1.0.BUILD-SNAPSHOT
+module focus --moduleName application-bo-crawler-api 
+dependency add --groupId com.brand.application.bo.core --artifactId application-bo-core --version 0.1.0.BUILD-SNAPSHOT
+module focus --moduleName application-bo-web  
+dependency add --groupId com.brand.application.bo.mobile --artifactId application-bo-mobile-api --version 0.1.0.BUILD-SNAPSHOT
+dependency add --groupId com.brand.application.bo.crawler --artifactId application-bo-crawler-api --version 0.1.0.BUILD-SNAPSHOT

@@ -243,6 +243,16 @@
             <artifactId>spring-security-taglibs</artifactId>
             <version>${spring-security.version}</version>
         </dependency>
+    <dependency>
+            <groupId>com.brand.application.bo.mobile</groupId>
+            <artifactId>application-bo-mobile-api</artifactId>
+            <version>0.1.0.BUILD-SNAPSHOT</version>
+        </dependency>
+    <dependency>
+            <groupId>com.brand.application.bo.crawler</groupId>
+            <artifactId>application-bo-crawler-api</artifactId>
+            <version>0.1.0.BUILD-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
