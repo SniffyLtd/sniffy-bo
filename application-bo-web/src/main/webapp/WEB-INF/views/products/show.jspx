@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_brand_application_bo_core_model_Product" object="${product}" path="/products" z="55ZunJcCOkPNwfWdlDprq1pV8qw=">
+        <field:display field="barcode" id="s_com_brand_application_bo_core_model_Product_barcode" object="${product}" z="160uQTRLfQUZHpAac+OdL40xctw="/>
+        <field:display field="name" id="s_com_brand_application_bo_core_model_Product_name" object="${product}" z="iR9v96IqG2aB/5EfawguFYTyx2U="/>
+        <field:display field="description" id="s_com_brand_application_bo_core_model_Product_description" object="${product}" z="pLTgrvYNhqlOTXbTwYv8f1saBd8="/>
+        <field:display field="category" id="s_com_brand_application_bo_core_model_Product_category" object="${product}" z="0Ny7vAS0R6JUdWfoGnY9N3xcv4w="/>
+        <field:display field="components" id="s_com_brand_application_bo_core_model_Product_components" object="${product}" z="5K4XznRIKBegrBsM58Z+XcBWSLU="/>
+        <field:display field="producer" id="s_com_brand_application_bo_core_model_Product_producer" object="${product}" z="S3csqJRXzuqqWZOijdAs9Ns/DtQ="/>
+    </page:show>
+</div>

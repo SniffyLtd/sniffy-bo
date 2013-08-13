@@ -1,0 +1,67 @@
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-08-13 21:31:08
+project --topLevelPackage com.brand.applicationn.bo --projectName application-bo --java 6 --packaging POM
+module create --moduleName application-bo-core --topLevelPackage com.brand.application.bo.core
+jpa setup --database MYSQL --provider HIBERNATE --databaseName bo
+jpa setup --database MYSQL --provider HIBERNATE --databaseName bo --userName root --password pass 
+entity jpa --class ~.model.Country
+field string --fieldName name 
+field string --fieldName code
+repository jpa --interface ~.repository.CountryRepository --entity ~.model.Country
+module focus --moduleName ~
+module create --moduleName application-bo-crawler-api --topLevelPackage com.brand.application.bo.crawler --packaging JAR 
+module focus --moduleName ~
+module create --moduleName application-bo-mobile-api --topLevelPackage com.brand.application.bo.mobile --packaging JAR 
+module focus --moduleName ~
+module create --moduleName application-bo-web --topLevelPackage com.brand.application.bo.web
+web mvc setup
+web mvc all --package ~.controller
+security setup
+module focus --moduleName ~
+module focus --moduleName application-bo-web
+module focus --moduleName application-bo-core 
+entity jpa --class ~.model.Component
+entity jpa --class ~.model.ComponentRating
+entity jpa --class ~.model.Product
+field string --fieldName barcode 
+field string --fieldName name
+field string --fieldName description
+focus --class ~.model.Component
+entity jpa --class ~.model.Category
+field reference --type ~.model.Category --fieldName category --cardinality MANY_TO_ONE --joinColumnName category_id
+field set --fieldName subcategories --type ~.model.Category --cardinality ONE_TO_MANY --mappedBy category
+focus --class ~.model.Product
+field reference --type ~.model.Category --fieldName category --cardinality MANY_TO_ONE --joinColumnName category_id
+field set --fieldName components --type ~.model.Component --cardinality MANY_TO_MANY
+module focus --moduleName application-bo-core 
+focus --class ~.model.Category
+field string --fieldName name
+focus --class ~.model.Component
+field string --fieldName name
+field string --fieldName equivalentName
+field string --fieldName equivalentNames
+field reference --type ~.model.ComponentRating --fieldName rating --cardinality MANY_TO_ONE --joinColumnName rating_id
+focus --class ~.model.ComponentRating
+field string --fieldName color
+field string --fieldName title
+field string --fieldName description
+entity jpa --class ~.model.Producer
+field string --fieldName name 
+field string --fieldName contactPerson
+field string --fieldName phone
+field string --fieldName fax
+field string --fieldName email
+field reference --type ~.model.Country --fieldName country --cardinality MANY_TO_ONE --joinColumnName country_id
+field string --fieldName code
+focus --class ~.model.Product
+field reference --type ~.model.Producer --fieldName producer --cardinality MANY_TO_ONE --joinColumnName producer_id
+repository jpa --interface ~.repository.CategoryRepository --entity ~.model.Category
+repository jpa --interface ~.repository.ComponentRepository --entity ~.model.Component
+repository jpa --interface ~.repository.ComponentRatingRepository --entity ~.model.ComponentRating
+repository jpa --interface ~.repository.ProducerRepository --entity ~.model.Producer
+repository jpa --interface ~.repository.ProductRepository --entity ~.model.Product
+module focus --moduleName application-bo-web 
+web mvc all --package ~.controller
+module focus --moduleName ~
+// script script.roo
+exit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-08-13 21:31:53

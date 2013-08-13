@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_country" z="+9IFFFqXHr5bWdYjx7upDibmQfo=">
+            <menu:item id="i_country_new" messageCode="global_menu_new" url="/countrys?form" z="OnEHsuvR46cQji6jmcBL0pJOBMc="/>
+            <menu:item id="i_country_list" messageCode="global_menu_list" url="/countrys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="AwKhjnZH+dOj0X4glIoj4SVuHNY="/>
+        </menu:category>
+        <menu:category id="c_component" z="H09agUE0W2T4MC/Yc0hxxSanepc=">
+            <menu:item id="i_component_new" messageCode="global_menu_new" url="/components?form" z="DA+sBIAH06NwNWT/k8jAo/CKBVA="/>
+            <menu:item id="i_component_list" messageCode="global_menu_list" url="/components?page=1&amp;size=${empty param.size ? 10 : param.size}" z="BbIr7DuxzD0QNTRlNbS6ZA9VIII="/>
+        </menu:category>
+        <menu:category id="c_category" z="kY676wLbZKc59UbcUGM8ogjOGOc=">
+            <menu:item id="i_category_new" messageCode="global_menu_new" url="/categorys?form" z="Xqz6msHtFFIlT4/UwJALJOYTD1I="/>
+            <menu:item id="i_category_list" messageCode="global_menu_list" url="/categorys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="6D9be6DQ6UCnl0O7TDbbrkOhNIE="/>
+        </menu:category>
+        <menu:category id="c_product" z="vJ6efqiSxFssuvqFTsXpvZ3AvA8=">
+            <menu:item id="i_product_new" messageCode="global_menu_new" url="/products?form" z="Ezf8cTW61d2RkMNEcYkDJpG01kc="/>
+            <menu:item id="i_product_list" messageCode="global_menu_list" url="/products?page=1&amp;size=${empty param.size ? 10 : param.size}" z="kEeyCmUUYXShbDEWwOLheaAkM50="/>
+        </menu:category>
+        <menu:category id="c_componentrating" z="y6H40012zSqCo81pI3W5BAPNoTc=">
+            <menu:item id="i_componentrating_new" messageCode="global_menu_new" url="/componentratings?form" z="5EOa01x8Iv1F+iZcxZYKQaCflkw="/>
+            <menu:item id="i_componentrating_list" messageCode="global_menu_list" url="/componentratings?page=1&amp;size=${empty param.size ? 10 : param.size}" z="4wziDPP6ZCl96O1Gc2mn9wn7RwI="/>
+        </menu:category>
+        <menu:category id="c_producer" z="KeWK2wm/jJeEIu2+gOkYbZDbXr8=">
+            <menu:item id="i_producer_new" messageCode="global_menu_new" url="/producers?form" z="k7PTYTPGXGN68Ox7Dlk4DSm4Zyc="/>
+            <menu:item id="i_producer_list" messageCode="global_menu_list" url="/producers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="jTOhiGfGTy/mKcMjOgzzIoHDkxg="/>
+        </menu:category>
+    </menu:menu>
+</div>

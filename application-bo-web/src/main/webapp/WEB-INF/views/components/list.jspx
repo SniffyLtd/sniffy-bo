@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_brand_application_bo_core_model_Component" items="${components}" z="+8Patc/FuDF0NGC3efZkaas9sVg=">
+        <table:table data="${components}" id="l_com_brand_application_bo_core_model_Component" path="/components" z="NBw8lkrYfWu+LRo/u5WAJiesvFA=">
+            <table:column id="c_com_brand_application_bo_core_model_Component_name" property="name" z="oqtvfj2j6pbTh0Ew8kAjlb5kwYs="/>
+            <table:column id="c_com_brand_application_bo_core_model_Component_equivalentName" property="equivalentName" z="LUaVYQteALsOaYfXQGehWX/QeDo="/>
+            <table:column id="c_com_brand_application_bo_core_model_Component_equivalentNames" property="equivalentNames" z="iwPjzD+Syf6uR+WGQX2wrBquhvM="/>
+            <table:column id="c_com_brand_application_bo_core_model_Component_rating" property="rating" z="3wwhWxeWnIjF129ZKML5wFh8vc0="/>
+        </table:table>
+    </page:list>
+</div>

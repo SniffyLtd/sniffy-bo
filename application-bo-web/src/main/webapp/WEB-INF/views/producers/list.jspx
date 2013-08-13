@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_brand_application_bo_core_model_Producer" items="${producers}" z="qyGTg8H//Ria3Zp+gC58QqRZEvQ=">
+        <table:table data="${producers}" id="l_com_brand_application_bo_core_model_Producer" path="/producers" z="rg5gteVHrnYqz7JT5DKY7v5NrFI=">
+            <table:column id="c_com_brand_application_bo_core_model_Producer_name" property="name" z="0mddFSqeCEGf2KoQzYEnXMl2fxs="/>
+            <table:column id="c_com_brand_application_bo_core_model_Producer_contactPerson" property="contactPerson" z="PL6zW4lWszbF2lPoBgo9QkJQc8Q="/>
+            <table:column id="c_com_brand_application_bo_core_model_Producer_phone" property="phone" z="c5nMX1KSGuW3x4dm6fN9EUtX3Zw="/>
+            <table:column id="c_com_brand_application_bo_core_model_Producer_fax" property="fax" z="yPcmP8CFyiF/RRlIjqZ4SpTv/sU="/>
+            <table:column id="c_com_brand_application_bo_core_model_Producer_email" property="email" z="ePy13lFN6OtwJ3Dw1D475h0/Vnc="/>
+            <table:column id="c_com_brand_application_bo_core_model_Producer_country" property="country" z="qdMwOxrj+iPeXUKk4KRgx1Mcvj0="/>
+        </table:table>
+    </page:list>
+</div>
