@@ -1,0 +1,12 @@
+<aspectj>
+<aspects>
+<aspect name="com.brand.application.bo.web.controller.ProducerController_Roo_Controller"/>
+<aspect name="com.brand.application.bo.web.controller.CountryController_Roo_Controller"/>
+<aspect name="com.brand.application.bo.web.controller.ComponentRatingController_Roo_Controller"/>
+<aspect name="com.brand.application.bo.web.controller.ComponentController_Roo_Controller"/>
+<aspect name="com.brand.application.bo.web.controller.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+<aspect name="com.brand.application.bo.web.controller.ProductController_Roo_Controller"/>
+<aspect name="com.brand.application.bo.web.controller.CategoryController_Roo_Controller"/>
+</aspects>
+</aspectj>
+

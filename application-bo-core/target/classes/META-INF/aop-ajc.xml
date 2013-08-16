@@ -1,0 +1,41 @@
+<aspectj>
+<aspects>
+<aspect name="com.brand.application.bo.core.model.Product_Roo_Jpa_Entity"/>
+<aspect name="com.brand.application.bo.core.model.Producer_Roo_Configurable"/>
+<aspect name="com.brand.application.bo.core.model.Country_Roo_Configurable"/>
+<aspect name="com.brand.application.bo.core.model.Component_Roo_Configurable"/>
+<aspect name="com.brand.application.bo.core.repository.ProductRepository_Roo_Jpa_Repository"/>
+<aspect name="com.brand.application.bo.core.repository.CountryRepository_Roo_Jpa_Repository"/>
+<aspect name="com.brand.application.bo.core.model.Category_Roo_Configurable"/>
+<aspect name="com.brand.application.bo.core.model.Producer_Roo_ToString"/>
+<aspect name="com.brand.application.bo.core.model.Producer_Roo_Jpa_Entity"/>
+<aspect name="com.brand.application.bo.core.repository.CategoryRepository_Roo_Jpa_Repository"/>
+<aspect name="com.brand.application.bo.core.model.Producer_Roo_JavaBean"/>
+<aspect name="com.brand.application.bo.core.model.Product_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.brand.application.bo.core.model.Category_Roo_ToString"/>
+<aspect name="com.brand.application.bo.core.model.Product_Roo_JavaBean"/>
+<aspect name="com.brand.application.bo.core.model.Category_Roo_Jpa_Entity"/>
+<aspect name="com.brand.application.bo.core.model.Category_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.brand.application.bo.core.model.ComponentRating_Roo_ToString"/>
+<aspect name="com.brand.application.bo.core.model.Country_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.brand.application.bo.core.repository.ProducerRepository_Roo_Jpa_Repository"/>
+<aspect name="com.brand.application.bo.core.model.Product_Roo_ToString"/>
+<aspect name="com.brand.application.bo.core.model.Component_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.brand.application.bo.core.model.Component_Roo_ToString"/>
+<aspect name="com.brand.application.bo.core.model.ComponentRating_Roo_Configurable"/>
+<aspect name="com.brand.application.bo.core.model.ComponentRating_Roo_Jpa_Entity"/>
+<aspect name="com.brand.application.bo.core.model.Component_Roo_Jpa_Entity"/>
+<aspect name="com.brand.application.bo.core.model.Country_Roo_Jpa_Entity"/>
+<aspect name="com.brand.application.bo.core.model.ComponentRating_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.brand.application.bo.core.model.Producer_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.brand.application.bo.core.model.ComponentRating_Roo_JavaBean"/>
+<aspect name="com.brand.application.bo.core.repository.ComponentRatingRepository_Roo_Jpa_Repository"/>
+<aspect name="com.brand.application.bo.core.model.Country_Roo_JavaBean"/>
+<aspect name="com.brand.application.bo.core.model.Product_Roo_Configurable"/>
+<aspect name="com.brand.application.bo.core.repository.ComponentRepository_Roo_Jpa_Repository"/>
+<aspect name="com.brand.application.bo.core.model.Category_Roo_JavaBean"/>
+<aspect name="com.brand.application.bo.core.model.Component_Roo_JavaBean"/>
+<aspect name="com.brand.application.bo.core.model.Country_Roo_ToString"/>
+</aspects>
+</aspectj>
+
