@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_brand_sniffy_bo_core_model_Component" items="${components}" z="TvwCF2bLzi4eQ5W62fXJ3vxBfJg=">
+        <table:table data="${components}" id="l_com_brand_sniffy_bo_core_model_Component" path="/components" z="gx/mSWBVnvIYQvjASk5seXtsPhE=">
+            <table:column id="c_com_brand_sniffy_bo_core_model_Component_name" property="name" z="hTD4PjWZCyf0T/i0NNxR2JX6b9o="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Component_equivalentName" property="equivalentName" z="jRCxBr5jKcAPMTAtq5RDslhq5kw="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Component_equivalentNames" property="equivalentNames" z="XfBYhaU6WaEv7Z5/E2mYU/ZLgtw="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Component_rating" property="rating" z="afMId7nyBz2RYCuSEazwPK9PFEM="/>
+        </table:table>
+    </page:list>
+</div>

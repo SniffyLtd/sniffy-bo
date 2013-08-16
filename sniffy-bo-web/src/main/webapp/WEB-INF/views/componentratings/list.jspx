@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_brand_sniffy_bo_core_model_ComponentRating" items="${componentratings}" z="4KsFWszf5/x+s1xgeirKANlU1G0=">
+        <table:table data="${componentratings}" id="l_com_brand_sniffy_bo_core_model_ComponentRating" path="/componentratings" z="ILzsWx1k8p5xOq3cWRgm/AvgOTM=">
+            <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_color" property="color" z="L4Db6hMNcjB0jl8LlvZtwxmqDpk="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_title" property="title" z="fFz7RHEMCE9mh1S/UO7xxdRXPC0="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_description" property="description" z="/AhtUfV/17QEDvWiT5L8b7qw6z8="/>
+        </table:table>
+    </page:list>
+</div>

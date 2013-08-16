@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_brand_sniffy_bo_core_model_Product" items="${products}" z="dKEp+mXVgYycpupk9ZyxW/nO3X4=">
+        <table:table data="${products}" id="l_com_brand_sniffy_bo_core_model_Product" path="/products" z="yND87EDLAdIjbfUI5hDH3phdjIs=">
+            <table:column id="c_com_brand_sniffy_bo_core_model_Product_barcode" property="barcode" z="gkEP2rSeUpaNFxdVnleA10+AbQY="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Product_name" property="name" z="6UTpFSSIMTv+qjE6nrqEXx2w2cs="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Product_description" property="description" z="K/Ni75+hAJB9kEUwLidWqNKdVH8="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Product_category" property="category" z="fTQhnJmdjVXn+smOuz0+HoTP85k="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Product_components" property="components" z="bxDKRjn0uNQ2bz/OlyvNM1j73Bk="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Product_producer" property="producer" z="lSuHT+AP3Ecq+KoN+bTwRJBelBw="/>
+        </table:table>
+    </page:list>
+</div>

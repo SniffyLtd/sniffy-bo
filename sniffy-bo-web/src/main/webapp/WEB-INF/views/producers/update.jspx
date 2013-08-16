@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_brand_sniffy_bo_core_model_Producer" modelAttribute="producer" path="/producers" versionField="Version" z="FGI34/2ydReaC1fe2ma2+rHmSOU=">
+        <field:input field="name" id="c_com_brand_sniffy_bo_core_model_Producer_name" z="MSMYj1BiBt7gpWpIo+0Y+c2d92U="/>
+        <field:input field="contactPerson" id="c_com_brand_sniffy_bo_core_model_Producer_contactPerson" z="DhIrcM8oXjExPdjDCTZ6wPQxRQw="/>
+        <field:input field="phone" id="c_com_brand_sniffy_bo_core_model_Producer_phone" z="mXbdFs7+7IIiCVFFtGypPECPWNk="/>
+        <field:input field="fax" id="c_com_brand_sniffy_bo_core_model_Producer_fax" z="vHePkwD/KV5b/upIElu+Ef4uqv8="/>
+        <field:input field="email" id="c_com_brand_sniffy_bo_core_model_Producer_email" validationMessageCode="field_invalid_email" z="Ql8lPWB/dH7eEAsyz/BHazBrSjo="/>
+        <field:select field="country" id="c_com_brand_sniffy_bo_core_model_Producer_country" itemValue="id" items="${countrys}" path="/countrys" z="Li+0WxcUwunDSMGl5RpZsUs/+7U="/>
+        <field:input field="code" id="c_com_brand_sniffy_bo_core_model_Producer_code" z="USjvNBcWRSl76gxiM75MnEVDDAI="/>
+    </form:update>
+</div>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_brand_sniffy_bo_core_model_Producer" object="${producer}" path="/producers" z="ovlQnckSeXsnJ/ptmSpLJ2RojPo=">
+        <field:display field="name" id="s_com_brand_sniffy_bo_core_model_Producer_name" object="${producer}" z="wzGS1mF834nyEf38iPRtnJr4LCE="/>
+        <field:display field="contactPerson" id="s_com_brand_sniffy_bo_core_model_Producer_contactPerson" object="${producer}" z="EVCO/gr4fUjIohKR/mKNeNdu1xQ="/>
+        <field:display field="phone" id="s_com_brand_sniffy_bo_core_model_Producer_phone" object="${producer}" z="Ag15luOC7EPCdPRpheBMBTldxNc="/>
+        <field:display field="fax" id="s_com_brand_sniffy_bo_core_model_Producer_fax" object="${producer}" z="4mJapc5Yum0ekaN39G7p0OOfhcg="/>
+        <field:display field="email" id="s_com_brand_sniffy_bo_core_model_Producer_email" object="${producer}" z="ABFSlYfUbkq5CqHRtySmBJ0zjw4="/>
+        <field:display field="country" id="s_com_brand_sniffy_bo_core_model_Producer_country" object="${producer}" z="ar3lgocUy1Oaog4MxRDm4MtA5o4="/>
+        <field:display field="code" id="s_com_brand_sniffy_bo_core_model_Producer_code" object="${producer}" z="9B6hGVdLSJP+3ODkxFN3vXy+XSc="/>
+    </page:show>
+</div>

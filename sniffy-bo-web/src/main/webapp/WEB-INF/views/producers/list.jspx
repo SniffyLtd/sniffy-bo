@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_brand_sniffy_bo_core_model_Producer" items="${producers}" z="w/cayQRDkoh0wVmjAdaoMWvOOMI=">
+        <table:table data="${producers}" id="l_com_brand_sniffy_bo_core_model_Producer" path="/producers" z="/9cYrHEWIqNVE6HUuf7Y4cziJqc=">
+            <table:column id="c_com_brand_sniffy_bo_core_model_Producer_name" property="name" z="+SiJtFq0lyVXbdosbBbFy0+6Z9g="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Producer_contactPerson" property="contactPerson" z="85oYcJ9sdVS/p1S2bX1yo3Z1BMc="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Producer_phone" property="phone" z="KOw/geuN0/iSG7VkAsVhXm+u8GM="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Producer_fax" property="fax" z="0PcncLPD4Ba6LLHOAoPm9ZnmmpY="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Producer_email" property="email" z="Wf6BcPSwXyOXSeU6xnV7RNvJGM0="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Producer_country" property="country" z="+vcWRLzm5+uQ8f5slj63kOwfIMY="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_brand_sniffy_bo_core_model_ComponentRating" modelAttribute="componentRating" path="/componentratings" render="${empty dependencies}" z="aDxJaMS8NztH52GXHCseYEYYn0o=">
+        <field:input field="color" id="c_com_brand_sniffy_bo_core_model_ComponentRating_color" z="ZqxMV3c+3CLshUz50k5fjJjN0Qg="/>
+        <field:input field="title" id="c_com_brand_sniffy_bo_core_model_ComponentRating_title" z="ngprxOPzCqdSOK504oIKBCtTYzY="/>
+        <field:input field="description" id="c_com_brand_sniffy_bo_core_model_ComponentRating_description" z="S7iILElpeK+ecu3ij8m8SCcBHvs="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_brand_sniffy_bo_core_model_ComponentRating" render="${not empty dependencies}" z="O3pGSk3Mxm2Udt4dBPN/qHNPmjY="/>
+</div>

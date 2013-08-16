@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_brand_sniffy_bo_core_model_Product" object="${product}" path="/products" z="LFus2Nc4a/acPU5MMmlIrpi8GOQ=">
+        <field:display field="barcode" id="s_com_brand_sniffy_bo_core_model_Product_barcode" object="${product}" z="bNESFIQV7TDpiG42rFNkRiXflVI="/>
+        <field:display field="name" id="s_com_brand_sniffy_bo_core_model_Product_name" object="${product}" z="6Emgrv8T44DgtZgLdWDt1tCgLjs="/>
+        <field:display field="description" id="s_com_brand_sniffy_bo_core_model_Product_description" object="${product}" z="lh6m1eHim7fEsEdm93u0d6l4bEY="/>
+        <field:display field="category" id="s_com_brand_sniffy_bo_core_model_Product_category" object="${product}" z="uo+L0Do0PmBryup/GgQmym7nqi4="/>
+        <field:display field="components" id="s_com_brand_sniffy_bo_core_model_Product_components" object="${product}" z="7Bh3tQ/W0DtYIc6N+W5vSYaJiZY="/>
+        <field:display field="producer" id="s_com_brand_sniffy_bo_core_model_Product_producer" object="${product}" z="giTupSzN3juJqPqbfvkvlJBztfo="/>
+    </page:show>
+</div>
