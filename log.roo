@@ -82,3 +82,8 @@ module focus --moduleName application-bo-core
 dependency add --groupId org.json --artifactId json --version 20090211
 exit
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-08-13 22:52:05
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-08-16 15:09:56
+module focus --moduleName application-bo-core 
+persistence setup --provider HIBERNATE --database POSTGRES
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-08-16 15:11:56
