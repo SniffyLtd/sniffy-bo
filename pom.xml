@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.brand.applicationn.bo</groupId>
-    <artifactId>application-bo</artifactId>
+    <groupId>com.brand.sniffy.bo</groupId>
+    <artifactId>sniffy-bo</artifactId>
     <packaging>pom</packaging>
     <version>0.1.0.BUILD-SNAPSHOT</version>
-    <name>application-bo</name>
+    <name>sniffy-bo</name>
     <properties>
         <aspectj.version>1.7.0.RC1</aspectj.version>
         <java.version>6</java.version>
@@ -15,10 +15,10 @@
         <spring.version>3.1.1.RELEASE</spring.version>
     </properties>
     <modules>
-        <module>application-bo-core</module>
-    <module>application-bo-crawler-api</module>
-    <module>application-bo-mobile-api</module>
-    <module>application-bo-web</module>
+        <module>sniffy-bo-core</module>
+    <module>sniffy-bo-crawler-api</module>
+    <module>sniffy-bo-mobile-api</module>
+    <module>sniffy-bo-web</module>
     </modules>
     <repositories>
         <repository>

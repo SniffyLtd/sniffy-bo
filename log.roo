@@ -1,6 +1,6 @@
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-08-13 21:31:08
-project --topLevelPackage com.brand.applicationn.bo --projectName application-bo --java 6 --packaging POM
-module create --moduleName application-bo-core --topLevelPackage com.brand.application.bo.core
+project --topLevelPackage com.brand.sniffy.bo --projectName sniffy-bo --java 6 --packaging POM
+module create --moduleName sniffy-bo-core --topLevelPackage com.brand.sniffy.bo.core
 jpa setup --database MYSQL --provider HIBERNATE --databaseName bo
 jpa setup --database MYSQL --provider HIBERNATE --databaseName bo --userName root --password pass 
 entity jpa --class ~.model.Country
@@ -8,17 +8,17 @@ field string --fieldName name
 field string --fieldName code
 repository jpa --interface ~.repository.CountryRepository --entity ~.model.Country
 module focus --moduleName ~
-module create --moduleName application-bo-crawler-api --topLevelPackage com.brand.application.bo.crawler --packaging JAR 
+module create --moduleName sniffy-bo-crawler-api --topLevelPackage com.brand.sniffy.bo.crawler --packaging JAR 
 module focus --moduleName ~
-module create --moduleName application-bo-mobile-api --topLevelPackage com.brand.application.bo.mobile --packaging JAR 
+module create --moduleName sniffy-bo-mobile-api --topLevelPackage com.brand.sniffy.bo.mobile --packaging JAR 
 module focus --moduleName ~
-module create --moduleName application-bo-web --topLevelPackage com.brand.application.bo.web
+module create --moduleName sniffy-bo-web --topLevelPackage com.brand.sniffy.bo.web
 web mvc setup
 web mvc all --package ~.controller
 security setup
 module focus --moduleName ~
-module focus --moduleName application-bo-web
-module focus --moduleName application-bo-core 
+module focus --moduleName sniffy-bo-web
+module focus --moduleName sniffy-bo-core 
 entity jpa --class ~.model.Component
 entity jpa --class ~.model.ComponentRating
 entity jpa --class ~.model.Product
@@ -32,7 +32,7 @@ field set --fieldName subcategories --type ~.model.Category --cardinality ONE_TO
 focus --class ~.model.Product
 field reference --type ~.model.Category --fieldName category --cardinality MANY_TO_ONE --joinColumnName category_id
 field set --fieldName components --type ~.model.Component --cardinality MANY_TO_MANY
-module focus --moduleName application-bo-core 
+module focus --moduleName sniffy-bo-core 
 focus --class ~.model.Category
 field string --fieldName name
 focus --class ~.model.Component
@@ -59,31 +59,34 @@ repository jpa --interface ~.repository.ComponentRepository --entity ~.model.Com
 repository jpa --interface ~.repository.ComponentRatingRepository --entity ~.model.ComponentRating
 repository jpa --interface ~.repository.ProducerRepository --entity ~.model.Producer
 repository jpa --interface ~.repository.ProductRepository --entity ~.model.Product
-module focus --moduleName application-bo-web 
+module focus --moduleName sniffy-bo-web 
 web mvc all --package ~.controller
 module focus --moduleName ~
 // script script.roo
 exit
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-08-13 21:31:53
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-08-13 21:38:54
-module focus --moduleName application-bo-crawler-api 
+module focus --moduleName sniffy-bo-crawler-api 
 dependency add --groupId org.springframework --artifactId spring-webmvc --version ${spring.version}
-module focus --moduleName application-bo-mobile-api  
+module focus --moduleName sniffy-bo-mobile-api  
 dependency add --groupId org.springframework --artifactId spring-webmvc --version ${spring.version}
-dependency add --groupId com.brand.application.bo.core --artifactId application-bo-core --version 0.1.0.BUILD-SNAPSHOT
-module focus --moduleName application-bo-crawler-api 
-dependency add --groupId com.brand.application.bo.core --artifactId application-bo-core --version 0.1.0.BUILD-SNAPSHOT
-module focus --moduleName application-bo-web  
-dependency add --groupId com.brand.application.bo.mobile --artifactId application-bo-mobile-api --version 0.1.0.BUILD-SNAPSHOT
-dependency add --groupId com.brand.application.bo.crawler --artifactId application-bo-crawler-api --version 0.1.0.BUILD-SNAPSHOT
-module focus --moduleName application-bo-mobile-api  
+dependency add --groupId com.brand.sniffy.bo.core --artifactId sniffy-bo-core --version 0.1.0.BUILD-SNAPSHOT
+module focus --moduleName sniffy-bo-crawler-api 
+dependency add --groupId com.brand.sniffy.bo.core --artifactId sniffy-bo-core --version 0.1.0.BUILD-SNAPSHOT
+module focus --moduleName sniffy-bo-web  
+dependency add --groupId com.brand.sniffy.bo.mobile --artifactId sniffy-bo-mobile-api --version 0.1.0.BUILD-SNAPSHOT
+dependency add --groupId com.brand.sniffy.bo.crawler --artifactId sniffy-bo-crawler-api --version 0.1.0.BUILD-SNAPSHOT
+module focus --moduleName sniffy-bo-mobile-api  
 dependency add --groupId org.json --artifactId json --version 20090211
-module focus --moduleName application-bo-core  
+module focus --moduleName sniffy-bo-core  
 dependency add --groupId org.json --artifactId json --version 20090211
 exit
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-08-13 22:52:05
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-08-16 15:09:56
-module focus --moduleName application-bo-core 
+module focus --moduleName sniffy-bo-core 
 persistence setup --provider HIBERNATE --database POSTGRES
 exit
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-08-16 15:11:56
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-08-16 18:28:08
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-08-16 18:30:34
