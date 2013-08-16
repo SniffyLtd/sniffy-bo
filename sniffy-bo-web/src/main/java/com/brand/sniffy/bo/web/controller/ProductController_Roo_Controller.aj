@@ -4,10 +4,10 @@
 package com.brand.sniffy.bo.web.controller;
 
 import com.brand.sniffy.bo.core.model.Product;
-import com.brand.sniffy.bo.core.repository.CategoryRepository;
-import com.brand.sniffy.bo.core.repository.ComponentRepository;
-import com.brand.sniffy.bo.core.repository.ProducerRepository;
-import com.brand.sniffy.bo.core.repository.ProductRepository;
+import com.brand.sniffy.bo.core.service.CategoryService;
+import com.brand.sniffy.bo.core.service.ComponentService;
+import com.brand.sniffy.bo.core.service.ProducerService;
+import com.brand.sniffy.bo.core.service.ProductService;
 import com.brand.sniffy.bo.web.controller.ProductController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -25,16 +25,16 @@ import org.springframework.web.util.WebUtils;
 privileged aspect ProductController_Roo_Controller {
     
     @Autowired
-    ProductRepository ProductController.productRepository;
+    ProductService ProductController.productService;
     
     @Autowired
-    CategoryRepository ProductController.categoryRepository;
+    CategoryService ProductController.categoryService;
     
     @Autowired
-    ComponentRepository ProductController.componentRepository;
+    ComponentService ProductController.componentService;
     
     @Autowired
-    ProducerRepository ProductController.producerRepository;
+    ProducerService ProductController.producerService;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String ProductController.create(@Valid Product product, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -43,7 +43,7 @@ privileged aspect ProductController_Roo_Controller {
             return "products/create";
         }
         uiModel.asMap().clear();
-        productRepository.save(product);
+        productService.saveProduct(product);
         return "redirect:/products/" + encodeUrlPathSegment(product.getId().toString(), httpServletRequest);
     }
     
@@ -55,7 +55,7 @@ privileged aspect ProductController_Roo_Controller {
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String ProductController.show(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("product", productRepository.findOne(id));
+        uiModel.addAttribute("product", productService.findProduct(id));
         uiModel.addAttribute("itemId", id);
         return "products/show";
     }
@@ -65,11 +65,11 @@ privileged aspect ProductController_Roo_Controller {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("products", productRepository.findAll(new org.springframework.data.domain.PageRequest(firstResult / sizeNo, sizeNo)).getContent());
-            float nrOfPages = (float) productRepository.count() / sizeNo;
+            uiModel.addAttribute("products", productService.findProductEntries(firstResult, sizeNo));
+            float nrOfPages = (float) productService.countAllProducts() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("products", productRepository.findAll());
+            uiModel.addAttribute("products", productService.findAllProducts());
         }
         return "products/list";
     }
@@ -81,20 +81,20 @@ privileged aspect ProductController_Roo_Controller {
             return "products/update";
         }
         uiModel.asMap().clear();
-        productRepository.save(product);
+        productService.updateProduct(product);
         return "redirect:/products/" + encodeUrlPathSegment(product.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
     public String ProductController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        populateEditForm(uiModel, productRepository.findOne(id));
+        populateEditForm(uiModel, productService.findProduct(id));
         return "products/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
     public String ProductController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Product product = productRepository.findOne(id);
-        productRepository.delete(product);
+        Product product = productService.findProduct(id);
+        productService.deleteProduct(product);
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -103,9 +103,9 @@ privileged aspect ProductController_Roo_Controller {
     
     void ProductController.populateEditForm(Model uiModel, Product product) {
         uiModel.addAttribute("product", product);
-        uiModel.addAttribute("categorys", categoryRepository.findAll());
-        uiModel.addAttribute("components", componentRepository.findAll());
-        uiModel.addAttribute("producers", producerRepository.findAll());
+        uiModel.addAttribute("categorys", categoryService.findAllCategorys());
+        uiModel.addAttribute("components", componentService.findAllComponents());
+        uiModel.addAttribute("producers", producerService.findAllProducers());
     }
     
     String ProductController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

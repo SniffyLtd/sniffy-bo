@@ -23,4 +23,12 @@ privileged aspect Country_Roo_JavaBean {
         this.code = code;
     }
     
+    public long Country.getLastUpdate() {
+        return this.lastUpdate;
+    }
+    
+    public void Country.setLastUpdate(long lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+    
 }

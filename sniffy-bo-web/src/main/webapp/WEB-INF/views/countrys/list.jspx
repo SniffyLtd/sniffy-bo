@@ -6,6 +6,7 @@
         <table:table data="${countrys}" id="l_com_brand_sniffy_bo_core_model_Country" path="/countrys" z="xSN/SXv8VD8VYvi6+g+8QSmmTic=">
             <table:column id="c_com_brand_sniffy_bo_core_model_Country_name" property="name" z="jlGQTdNbji2xrYZD4hbIn6MGnGU="/>
             <table:column id="c_com_brand_sniffy_bo_core_model_Country_code" property="code" z="HkcvACI18fN7wm7LoMxUtbLY1hc="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Country_lastUpdate" property="lastUpdate" z="UWODYeoaVlMfAejUQmwvp3nqReU="/>
         </table:table>
     </page:list>
 </div>

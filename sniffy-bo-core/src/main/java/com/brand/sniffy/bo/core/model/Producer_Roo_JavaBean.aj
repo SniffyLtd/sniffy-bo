@@ -64,4 +64,12 @@ privileged aspect Producer_Roo_JavaBean {
         this.code = code;
     }
     
+    public long Producer.getLastUpdate() {
+        return this.lastUpdate;
+    }
+    
+    public void Producer.setLastUpdate(long lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+    
 }

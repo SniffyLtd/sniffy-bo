@@ -9,12 +9,12 @@ import com.brand.sniffy.bo.core.model.ComponentRating;
 import com.brand.sniffy.bo.core.model.Country;
 import com.brand.sniffy.bo.core.model.Producer;
 import com.brand.sniffy.bo.core.model.Product;
-import com.brand.sniffy.bo.core.repository.CategoryRepository;
-import com.brand.sniffy.bo.core.repository.ComponentRatingRepository;
-import com.brand.sniffy.bo.core.repository.ComponentRepository;
-import com.brand.sniffy.bo.core.repository.CountryRepository;
-import com.brand.sniffy.bo.core.repository.ProducerRepository;
-import com.brand.sniffy.bo.core.repository.ProductRepository;
+import com.brand.sniffy.bo.core.service.CategoryService;
+import com.brand.sniffy.bo.core.service.ComponentRatingService;
+import com.brand.sniffy.bo.core.service.ComponentService;
+import com.brand.sniffy.bo.core.service.CountryService;
+import com.brand.sniffy.bo.core.service.ProducerService;
+import com.brand.sniffy.bo.core.service.ProductService;
 import com.brand.sniffy.bo.web.controller.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -26,27 +26,27 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
     
     @Autowired
-    CategoryRepository ApplicationConversionServiceFactoryBean.categoryRepository;
+    CategoryService ApplicationConversionServiceFactoryBean.categoryService;
     
     @Autowired
-    ComponentRepository ApplicationConversionServiceFactoryBean.componentRepository;
+    ComponentService ApplicationConversionServiceFactoryBean.componentService;
     
     @Autowired
-    ComponentRatingRepository ApplicationConversionServiceFactoryBean.componentRatingRepository;
+    ComponentRatingService ApplicationConversionServiceFactoryBean.componentRatingService;
     
     @Autowired
-    CountryRepository ApplicationConversionServiceFactoryBean.countryRepository;
+    CountryService ApplicationConversionServiceFactoryBean.countryService;
     
     @Autowired
-    ProducerRepository ApplicationConversionServiceFactoryBean.producerRepository;
+    ProducerService ApplicationConversionServiceFactoryBean.producerService;
     
     @Autowired
-    ProductRepository ApplicationConversionServiceFactoryBean.productRepository;
+    ProductService ApplicationConversionServiceFactoryBean.productService;
     
     public Converter<Category, String> ApplicationConversionServiceFactoryBean.getCategoryToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.brand.sniffy.bo.core.model.Category, java.lang.String>() {
             public String convert(Category category) {
-                return new StringBuilder().append(category.getName()).toString();
+                return new StringBuilder().append(category.getName()).append(' ').append(category.getLastUpdate()).toString();
             }
         };
     }
@@ -54,7 +54,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Long, Category> ApplicationConversionServiceFactoryBean.getIdToCategoryConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.brand.sniffy.bo.core.model.Category>() {
             public com.brand.sniffy.bo.core.model.Category convert(java.lang.Long id) {
-                return categoryRepository.findOne(id);
+                return categoryService.findCategory(id);
             }
         };
     }
@@ -70,7 +70,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Component, String> ApplicationConversionServiceFactoryBean.getComponentToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.brand.sniffy.bo.core.model.Component, java.lang.String>() {
             public String convert(Component component) {
-                return new StringBuilder().append(component.getName()).append(' ').append(component.getEquivalentName()).append(' ').append(component.getEquivalentNames()).toString();
+                return new StringBuilder().append(component.getName()).append(' ').append(component.getEquivalentNames()).append(' ').append(component.getLastUpdate()).toString();
             }
         };
     }
@@ -78,7 +78,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Long, Component> ApplicationConversionServiceFactoryBean.getIdToComponentConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.brand.sniffy.bo.core.model.Component>() {
             public com.brand.sniffy.bo.core.model.Component convert(java.lang.Long id) {
-                return componentRepository.findOne(id);
+                return componentService.findComponent(id);
             }
         };
     }
@@ -94,7 +94,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<ComponentRating, String> ApplicationConversionServiceFactoryBean.getComponentRatingToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.brand.sniffy.bo.core.model.ComponentRating, java.lang.String>() {
             public String convert(ComponentRating componentRating) {
-                return new StringBuilder().append(componentRating.getColor()).append(' ').append(componentRating.getTitle()).append(' ').append(componentRating.getDescription()).toString();
+                return new StringBuilder().append(componentRating.getColor()).append(' ').append(componentRating.getTitle()).append(' ').append(componentRating.getDescription()).append(' ').append(componentRating.getLastUpdate()).toString();
             }
         };
     }
@@ -102,7 +102,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Long, ComponentRating> ApplicationConversionServiceFactoryBean.getIdToComponentRatingConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.brand.sniffy.bo.core.model.ComponentRating>() {
             public com.brand.sniffy.bo.core.model.ComponentRating convert(java.lang.Long id) {
-                return componentRatingRepository.findOne(id);
+                return componentRatingService.findComponentRating(id);
             }
         };
     }
@@ -118,7 +118,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Country, String> ApplicationConversionServiceFactoryBean.getCountryToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.brand.sniffy.bo.core.model.Country, java.lang.String>() {
             public String convert(Country country) {
-                return new StringBuilder().append(country.getName()).append(' ').append(country.getCode()).toString();
+                return new StringBuilder().append(country.getName()).append(' ').append(country.getCode()).append(' ').append(country.getLastUpdate()).toString();
             }
         };
     }
@@ -126,7 +126,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Long, Country> ApplicationConversionServiceFactoryBean.getIdToCountryConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.brand.sniffy.bo.core.model.Country>() {
             public com.brand.sniffy.bo.core.model.Country convert(java.lang.Long id) {
-                return countryRepository.findOne(id);
+                return countryService.findCountry(id);
             }
         };
     }
@@ -150,7 +150,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Long, Producer> ApplicationConversionServiceFactoryBean.getIdToProducerConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.brand.sniffy.bo.core.model.Producer>() {
             public com.brand.sniffy.bo.core.model.Producer convert(java.lang.Long id) {
-                return producerRepository.findOne(id);
+                return producerService.findProducer(id);
             }
         };
     }
@@ -166,7 +166,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Product, String> ApplicationConversionServiceFactoryBean.getProductToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.brand.sniffy.bo.core.model.Product, java.lang.String>() {
             public String convert(Product product) {
-                return new StringBuilder().append(product.getBarcode()).append(' ').append(product.getName()).append(' ').append(product.getDescription()).toString();
+                return new StringBuilder().append(product.getBarcode()).append(' ').append(product.getName()).append(' ').append(product.getDescription()).append(' ').append(product.getLastUpdate()).toString();
             }
         };
     }
@@ -174,7 +174,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Long, Product> ApplicationConversionServiceFactoryBean.getIdToProductConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.brand.sniffy.bo.core.model.Product>() {
             public com.brand.sniffy.bo.core.model.Product convert(java.lang.Long id) {
-                return productRepository.findOne(id);
+                return productService.findProduct(id);
             }
         };
     }

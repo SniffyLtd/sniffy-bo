@@ -5,5 +5,6 @@
     <form:update id="fu_com_brand_sniffy_bo_core_model_Country" modelAttribute="country" path="/countrys" versionField="Version" z="lOV3DHepRlMPCrHTx69NQYxjjbU=">
         <field:input field="name" id="c_com_brand_sniffy_bo_core_model_Country_name" z="1J30EUZqgjJEPxEQphAl7ynTF6s="/>
         <field:input field="code" id="c_com_brand_sniffy_bo_core_model_Country_code" z="qGPWpij+qlcTbT53dZwAMEV0F5I="/>
+        <field:input field="lastUpdate" id="c_com_brand_sniffy_bo_core_model_Country_lastUpdate" z="wlchEX3s0fcDaiM34xGCIelhgNY="/>
     </form:update>
 </div>

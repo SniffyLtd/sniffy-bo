@@ -4,7 +4,7 @@
 package com.brand.sniffy.bo.web.controller;
 
 import com.brand.sniffy.bo.core.model.ComponentRating;
-import com.brand.sniffy.bo.core.repository.ComponentRatingRepository;
+import com.brand.sniffy.bo.core.service.ComponentRatingService;
 import com.brand.sniffy.bo.web.controller.ComponentRatingController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +22,7 @@ import org.springframework.web.util.WebUtils;
 privileged aspect ComponentRatingController_Roo_Controller {
     
     @Autowired
-    ComponentRatingRepository ComponentRatingController.componentRatingRepository;
+    ComponentRatingService ComponentRatingController.componentRatingService;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String ComponentRatingController.create(@Valid ComponentRating componentRating, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -31,7 +31,7 @@ privileged aspect ComponentRatingController_Roo_Controller {
             return "componentratings/create";
         }
         uiModel.asMap().clear();
-        componentRatingRepository.save(componentRating);
+        componentRatingService.saveComponentRating(componentRating);
         return "redirect:/componentratings/" + encodeUrlPathSegment(componentRating.getId().toString(), httpServletRequest);
     }
     
@@ -43,7 +43,7 @@ privileged aspect ComponentRatingController_Roo_Controller {
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String ComponentRatingController.show(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("componentrating", componentRatingRepository.findOne(id));
+        uiModel.addAttribute("componentrating", componentRatingService.findComponentRating(id));
         uiModel.addAttribute("itemId", id);
         return "componentratings/show";
     }
@@ -53,11 +53,11 @@ privileged aspect ComponentRatingController_Roo_Controller {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("componentratings", componentRatingRepository.findAll(new org.springframework.data.domain.PageRequest(firstResult / sizeNo, sizeNo)).getContent());
-            float nrOfPages = (float) componentRatingRepository.count() / sizeNo;
+            uiModel.addAttribute("componentratings", componentRatingService.findComponentRatingEntries(firstResult, sizeNo));
+            float nrOfPages = (float) componentRatingService.countAllComponentRatings() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("componentratings", componentRatingRepository.findAll());
+            uiModel.addAttribute("componentratings", componentRatingService.findAllComponentRatings());
         }
         return "componentratings/list";
     }
@@ -69,20 +69,20 @@ privileged aspect ComponentRatingController_Roo_Controller {
             return "componentratings/update";
         }
         uiModel.asMap().clear();
-        componentRatingRepository.save(componentRating);
+        componentRatingService.updateComponentRating(componentRating);
         return "redirect:/componentratings/" + encodeUrlPathSegment(componentRating.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
     public String ComponentRatingController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        populateEditForm(uiModel, componentRatingRepository.findOne(id));
+        populateEditForm(uiModel, componentRatingService.findComponentRating(id));
         return "componentratings/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
     public String ComponentRatingController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        ComponentRating componentRating = componentRatingRepository.findOne(id);
-        componentRatingRepository.delete(componentRating);
+        ComponentRating componentRating = componentRatingService.findComponentRating(id);
+        componentRatingService.deleteComponentRating(componentRating);
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());

@@ -10,6 +10,7 @@
         <field:input field="email" id="c_com_brand_sniffy_bo_core_model_Producer_email" validationMessageCode="field_invalid_email" z="Ql8lPWB/dH7eEAsyz/BHazBrSjo="/>
         <field:select field="country" id="c_com_brand_sniffy_bo_core_model_Producer_country" itemValue="id" items="${countrys}" path="/countrys" z="Li+0WxcUwunDSMGl5RpZsUs/+7U="/>
         <field:input field="code" id="c_com_brand_sniffy_bo_core_model_Producer_code" z="USjvNBcWRSl76gxiM75MnEVDDAI="/>
+        <field:input field="lastUpdate" id="c_com_brand_sniffy_bo_core_model_Producer_lastUpdate" z="Oc+Q3GkgHLTanvhK2JT7XQsPMs4="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_brand_sniffy_bo_core_model_Producer" render="${not empty dependencies}" z="ENLHaoHJ74NDQR4ODhwejLv4URg="/>
 </div>

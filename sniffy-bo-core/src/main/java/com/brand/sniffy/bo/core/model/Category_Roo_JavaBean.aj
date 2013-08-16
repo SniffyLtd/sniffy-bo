@@ -8,6 +8,14 @@ import java.util.Set;
 
 privileged aspect Category_Roo_JavaBean {
     
+    public String Category.getName() {
+        return this.name;
+    }
+    
+    public void Category.setName(String name) {
+        this.name = name;
+    }
+    
     public Category Category.getCategory() {
         return this.category;
     }
@@ -16,20 +24,20 @@ privileged aspect Category_Roo_JavaBean {
         this.category = category;
     }
     
+    public long Category.getLastUpdate() {
+        return this.lastUpdate;
+    }
+    
+    public void Category.setLastUpdate(long lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+    
     public Set<Category> Category.getSubcategories() {
         return this.subcategories;
     }
     
     public void Category.setSubcategories(Set<Category> subcategories) {
         this.subcategories = subcategories;
-    }
-    
-    public String Category.getName() {
-        return this.name;
-    }
-    
-    public void Category.setName(String name) {
-        this.name = name;
     }
     
 }

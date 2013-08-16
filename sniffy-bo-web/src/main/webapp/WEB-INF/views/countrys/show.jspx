@@ -5,5 +5,6 @@
     <page:show id="ps_com_brand_sniffy_bo_core_model_Country" object="${country}" path="/countrys" z="8aTXKyhCoTLDj7hxcF6e79ZJ6Lc=">
         <field:display field="name" id="s_com_brand_sniffy_bo_core_model_Country_name" object="${country}" z="jb3mn6XS5bwpgDF8NXYLQ/7ZpTw="/>
         <field:display field="code" id="s_com_brand_sniffy_bo_core_model_Country_code" object="${country}" z="79jtwhjx20tk/k+EH6DALt48UzA="/>
+        <field:display field="lastUpdate" id="s_com_brand_sniffy_bo_core_model_Country_lastUpdate" object="${country}" z="RmZ6LzhkScVbIFZt8y//c0yGWX0="/>
     </page:show>
 </div>

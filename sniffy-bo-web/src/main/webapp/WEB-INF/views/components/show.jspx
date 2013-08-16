@@ -4,8 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_com_brand_sniffy_bo_core_model_Component" object="${component}" path="/components" z="ddfy7uPaM8kELpHtkTZO/REbjuQ=">
         <field:display field="name" id="s_com_brand_sniffy_bo_core_model_Component_name" object="${component}" z="IJO0QbatvXx6FrsOBx8AZvWiUrQ="/>
-        <field:display field="equivalentName" id="s_com_brand_sniffy_bo_core_model_Component_equivalentName" object="${component}" z="oCi7FGdJd2bmGh8gjbV5n5bXqVo="/>
         <field:display field="equivalentNames" id="s_com_brand_sniffy_bo_core_model_Component_equivalentNames" object="${component}" z="61qS3b5PDy4Oj0+/erJDb5Wk+Ds="/>
         <field:display field="rating" id="s_com_brand_sniffy_bo_core_model_Component_rating" object="${component}" z="cG2iGgB0qzTbLa/z6htMK1xcguI="/>
+        <field:display field="lastUpdate" id="s_com_brand_sniffy_bo_core_model_Component_lastUpdate" object="${component}" z="WWWqF944xTsj2JYLk9GIZP6Fib0="/>
     </page:show>
 </div>

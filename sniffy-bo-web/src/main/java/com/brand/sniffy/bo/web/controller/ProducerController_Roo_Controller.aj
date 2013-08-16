@@ -4,8 +4,8 @@
 package com.brand.sniffy.bo.web.controller;
 
 import com.brand.sniffy.bo.core.model.Producer;
-import com.brand.sniffy.bo.core.repository.CountryRepository;
-import com.brand.sniffy.bo.core.repository.ProducerRepository;
+import com.brand.sniffy.bo.core.service.CountryService;
+import com.brand.sniffy.bo.core.service.ProducerService;
 import com.brand.sniffy.bo.web.controller.ProducerController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -23,10 +23,10 @@ import org.springframework.web.util.WebUtils;
 privileged aspect ProducerController_Roo_Controller {
     
     @Autowired
-    ProducerRepository ProducerController.producerRepository;
+    ProducerService ProducerController.producerService;
     
     @Autowired
-    CountryRepository ProducerController.countryRepository;
+    CountryService ProducerController.countryService;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String ProducerController.create(@Valid Producer producer, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -35,7 +35,7 @@ privileged aspect ProducerController_Roo_Controller {
             return "producers/create";
         }
         uiModel.asMap().clear();
-        producerRepository.save(producer);
+        producerService.saveProducer(producer);
         return "redirect:/producers/" + encodeUrlPathSegment(producer.getId().toString(), httpServletRequest);
     }
     
@@ -47,7 +47,7 @@ privileged aspect ProducerController_Roo_Controller {
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String ProducerController.show(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("producer", producerRepository.findOne(id));
+        uiModel.addAttribute("producer", producerService.findProducer(id));
         uiModel.addAttribute("itemId", id);
         return "producers/show";
     }
@@ -57,11 +57,11 @@ privileged aspect ProducerController_Roo_Controller {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("producers", producerRepository.findAll(new org.springframework.data.domain.PageRequest(firstResult / sizeNo, sizeNo)).getContent());
-            float nrOfPages = (float) producerRepository.count() / sizeNo;
+            uiModel.addAttribute("producers", producerService.findProducerEntries(firstResult, sizeNo));
+            float nrOfPages = (float) producerService.countAllProducers() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("producers", producerRepository.findAll());
+            uiModel.addAttribute("producers", producerService.findAllProducers());
         }
         return "producers/list";
     }
@@ -73,20 +73,20 @@ privileged aspect ProducerController_Roo_Controller {
             return "producers/update";
         }
         uiModel.asMap().clear();
-        producerRepository.save(producer);
+        producerService.updateProducer(producer);
         return "redirect:/producers/" + encodeUrlPathSegment(producer.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
     public String ProducerController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        populateEditForm(uiModel, producerRepository.findOne(id));
+        populateEditForm(uiModel, producerService.findProducer(id));
         return "producers/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
     public String ProducerController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Producer producer = producerRepository.findOne(id);
-        producerRepository.delete(producer);
+        Producer producer = producerService.findProducer(id);
+        producerService.deleteProducer(producer);
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -95,7 +95,7 @@ privileged aspect ProducerController_Roo_Controller {
     
     void ProducerController.populateEditForm(Model uiModel, Producer producer) {
         uiModel.addAttribute("producer", producer);
-        uiModel.addAttribute("countrys", countryRepository.findAll());
+        uiModel.addAttribute("countrys", countryService.findAllCountrys());
     }
     
     String ProducerController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

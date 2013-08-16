@@ -6,5 +6,6 @@
         <field:display field="color" id="s_com_brand_sniffy_bo_core_model_ComponentRating_color" object="${componentrating}" z="x2UPYM1H+coDB/bKKri5k29mudA="/>
         <field:display field="title" id="s_com_brand_sniffy_bo_core_model_ComponentRating_title" object="${componentrating}" z="YD+byvn0xALjcpFpOq7CcuvFelA="/>
         <field:display field="description" id="s_com_brand_sniffy_bo_core_model_ComponentRating_description" object="${componentrating}" z="8c5CG4ongGcBCHeEo5CM3bjnZ3Q="/>
+        <field:display field="lastUpdate" id="s_com_brand_sniffy_bo_core_model_ComponentRating_lastUpdate" object="${componentrating}" z="dcWxzDB9UALVFJJ+VJfKTuBIbdg="/>
     </page:show>
 </div>

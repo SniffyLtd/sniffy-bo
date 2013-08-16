@@ -1,12 +1,10 @@
 package com.brand.sniffy.bo.core.model;
-
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -20,11 +18,11 @@ public class Product {
 
     private static final String NAME_FIELD = "name";
 
-	private static final String BARCODE_FIELD = "barcode";
+    private static final String BARCODE_FIELD = "barcode";
 
-	private static final String DESCRIPTION_FIELD = "description";
+    private static final String DESCRIPTION_FIELD = "description";
 
-	private String barcode;
+    private String barcode;
 
     private String name;
 
@@ -41,16 +39,19 @@ public class Product {
     @JoinColumn(name = "producer_id")
     private Producer producer;
 
-	public JSONObject toJson() {
-		JSONObject product = new JSONObject();
-		try {
-			product.put(NAME_FIELD, name);
-			product.put(BARCODE_FIELD, barcode);
-			product.put(DESCRIPTION_FIELD, description);
+    public JSONObject toJson() {
+        JSONObject product = new JSONObject();
+        try {
+            product.put(NAME_FIELD, name);
+            product.put(BARCODE_FIELD, barcode);
+            product.put(DESCRIPTION_FIELD, description);
+        } catch (JSONException e) {
+            throw new IllegalStateException(e);
+        }
+        return product;
+    }
 
-		} catch (JSONException e) {
-			throw new IllegalStateException(e);
-		}
-		return product;
-	}
+    /**
+     */
+    private long lastUpdate;
 }

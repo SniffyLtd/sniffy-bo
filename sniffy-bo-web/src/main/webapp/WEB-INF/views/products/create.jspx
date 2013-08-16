@@ -9,6 +9,7 @@
         <field:select field="category" id="c_com_brand_sniffy_bo_core_model_Product_category" itemValue="id" items="${categorys}" path="/categorys" z="uKNjWkkSfel9jPPB+kOyXCZe9dA="/>
         <field:select field="components" id="c_com_brand_sniffy_bo_core_model_Product_components" itemValue="id" items="${components}" multiple="true" path="/components" z="utosAQC1KZo3bpC6YxfuErXjD1s="/>
         <field:select field="producer" id="c_com_brand_sniffy_bo_core_model_Product_producer" itemValue="id" items="${producers}" path="/producers" z="b9CC1PwgHCCMvhHgIPHGHhVXKew="/>
+        <field:input field="lastUpdate" id="c_com_brand_sniffy_bo_core_model_Product_lastUpdate" z="7cL/GmbT8orAenSHPCAi/7i/e9o="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_brand_sniffy_bo_core_model_Product" render="${not empty dependencies}" z="zprXDUERpVOJaAuCOToDmY4tLb4="/>
 </div>

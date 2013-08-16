@@ -31,4 +31,12 @@ privileged aspect ComponentRating_Roo_JavaBean {
         this.description = description;
     }
     
+    public long ComponentRating.getLastUpdate() {
+        return this.lastUpdate;
+    }
+    
+    public void ComponentRating.setLastUpdate(long lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+    
 }

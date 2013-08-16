@@ -4,7 +4,7 @@
 package com.brand.sniffy.bo.web.controller;
 
 import com.brand.sniffy.bo.core.model.Country;
-import com.brand.sniffy.bo.core.repository.CountryRepository;
+import com.brand.sniffy.bo.core.service.CountryService;
 import com.brand.sniffy.bo.web.controller.CountryController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +22,7 @@ import org.springframework.web.util.WebUtils;
 privileged aspect CountryController_Roo_Controller {
     
     @Autowired
-    CountryRepository CountryController.countryRepository;
+    CountryService CountryController.countryService;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String CountryController.create(@Valid Country country, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -31,7 +31,7 @@ privileged aspect CountryController_Roo_Controller {
             return "countrys/create";
         }
         uiModel.asMap().clear();
-        countryRepository.save(country);
+        countryService.saveCountry(country);
         return "redirect:/countrys/" + encodeUrlPathSegment(country.getId().toString(), httpServletRequest);
     }
     
@@ -43,7 +43,7 @@ privileged aspect CountryController_Roo_Controller {
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String CountryController.show(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("country", countryRepository.findOne(id));
+        uiModel.addAttribute("country", countryService.findCountry(id));
         uiModel.addAttribute("itemId", id);
         return "countrys/show";
     }
@@ -53,11 +53,11 @@ privileged aspect CountryController_Roo_Controller {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("countrys", countryRepository.findAll(new org.springframework.data.domain.PageRequest(firstResult / sizeNo, sizeNo)).getContent());
-            float nrOfPages = (float) countryRepository.count() / sizeNo;
+            uiModel.addAttribute("countrys", countryService.findCountryEntries(firstResult, sizeNo));
+            float nrOfPages = (float) countryService.countAllCountrys() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("countrys", countryRepository.findAll());
+            uiModel.addAttribute("countrys", countryService.findAllCountrys());
         }
         return "countrys/list";
     }
@@ -69,20 +69,20 @@ privileged aspect CountryController_Roo_Controller {
             return "countrys/update";
         }
         uiModel.asMap().clear();
-        countryRepository.save(country);
+        countryService.updateCountry(country);
         return "redirect:/countrys/" + encodeUrlPathSegment(country.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
     public String CountryController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        populateEditForm(uiModel, countryRepository.findOne(id));
+        populateEditForm(uiModel, countryService.findCountry(id));
         return "countrys/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
     public String CountryController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Country country = countryRepository.findOne(id);
-        countryRepository.delete(country);
+        Country country = countryService.findCountry(id);
+        countryService.deleteCountry(country);
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());

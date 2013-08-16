@@ -1,5 +1,4 @@
 package com.brand.sniffy.bo.core.model;
-
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -26,4 +25,8 @@ public class Producer {
     private Country country;
 
     private String code;
+
+    /**
+     */
+    private long lastUpdate;
 }

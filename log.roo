@@ -90,3 +90,42 @@ exit
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-08-16 18:28:08
 exit
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-08-16 18:30:34
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-08-16 21:04:28
+module focus --moduleName sniffy-bo-core 
+focus --class ~.model.Product
+field number --fieldName lastUpdate --type long
+focus --class ~.model.Producer
+field number --fieldName lastUpdate --type long
+focus --class ~.model.ComponentRating 
+field number --fieldName lastUpdate --type long
+focus --class ~.model.Component
+field number --fieldName lastUpdate --type long
+focus --class ~.model.Category
+field number --fieldName lastUpdate --type long
+focus --class ~.model.Country
+field number --fieldName lastUpdate --type long
+module focus --moduleName sniffy-bo-web 
+service type --interface ~.service.ProductService --entity com.brand.sniffy.bo.core.Product
+service type --interface ~.service.ComponentService --entity com.brand.sniffy.bo.core.model.Component
+service type --interface ~.service.ProductService --entity com.brand.sniffy.bo.core.model.Product
+service type --interface ~.service.ComponentRatingService --entity com.brand.sniffy.bo.core.model.ComponentRating
+service type --interface ~.service.CountryService --entity com.brand.sniffy.bo.core.model.Country
+service type --interface ~.service.CategoryService --entity com.brand.sniffy.bo.core.model.Category
+service type --interface ~.service.ProductService --entity com.brand.sniffy.bo.core.model.Product
+service type --interface ~.service.ProductService --entity com.brand.sniffy.bo.core.model.Product
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-08-16 21:18:09
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-08-16 21:19:47
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-08-16 21:25:02
+service type --interface ~.service.CountryService --entity com.brand.sniffy.bo.core.model.Country
+module focus --moduleName sniffy-bo-web 
+service type --interface ~.service.CountryService --entity com.brand.sniffy.bo.core.model.Country
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-08-16 21:47:12
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-08-16 21:51:08
+module focus --moduleName sniffy-bo-core 
+service type --interface ~.service.ComponentRatingService --entity com.brand.sniffy.bo.core.model.ComponentRating
+service type --interface ~.service.ComponentService --entity com.brand.sniffy.bo.core.model.Component
+service type --interface ~.service.CountryService --entity com.brand.sniffy.bo.core.model.Country
+service type --interface ~.service.ProductService --entity com.brand.sniffy.bo.core.model.Product
+service type --interface ~.service.CategoryService --entity com.brand.sniffy.bo.core.model.Category
+service type --interface ~.service.ProducerService --entity com.brand.sniffy.bo.core.model.Producer

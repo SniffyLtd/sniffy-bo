@@ -1,5 +1,4 @@
 package com.brand.sniffy.bo.core.model;
-
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -13,11 +12,13 @@ public class Component {
 
     private String name;
 
-    private String equivalentName;
-
     private String equivalentNames;
 
     @ManyToOne
     @JoinColumn(name = "rating_id")
     private ComponentRating rating;
+
+    /**
+     */
+    private long lastUpdate;
 }

@@ -7,6 +7,7 @@
             <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_color" property="color" z="L4Db6hMNcjB0jl8LlvZtwxmqDpk="/>
             <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_title" property="title" z="fFz7RHEMCE9mh1S/UO7xxdRXPC0="/>
             <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_description" property="description" z="/AhtUfV/17QEDvWiT5L8b7qw6z8="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_lastUpdate" property="lastUpdate" z="2GVBB3w2AQeVT7x34KqohR2OMiA="/>
         </table:table>
     </page:list>
 </div>

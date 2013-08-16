@@ -1,5 +1,4 @@
 package com.brand.sniffy.bo.core.model;
-
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -14,4 +13,8 @@ public class ComponentRating {
     private String title;
 
     private String description;
+
+    /**
+     */
+    private long lastUpdate;
 }

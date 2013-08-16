@@ -16,14 +16,6 @@ privileged aspect Component_Roo_JavaBean {
         this.name = name;
     }
     
-    public String Component.getEquivalentName() {
-        return this.equivalentName;
-    }
-    
-    public void Component.setEquivalentName(String equivalentName) {
-        this.equivalentName = equivalentName;
-    }
-    
     public String Component.getEquivalentNames() {
         return this.equivalentNames;
     }
@@ -38,6 +30,14 @@ privileged aspect Component_Roo_JavaBean {
     
     public void Component.setRating(ComponentRating rating) {
         this.rating = rating;
+    }
+    
+    public long Component.getLastUpdate() {
+        return this.lastUpdate;
+    }
+    
+    public void Component.setLastUpdate(long lastUpdate) {
+        this.lastUpdate = lastUpdate;
     }
     
 }

@@ -4,7 +4,7 @@
 package com.brand.sniffy.bo.web.controller;
 
 import com.brand.sniffy.bo.core.model.Category;
-import com.brand.sniffy.bo.core.repository.CategoryRepository;
+import com.brand.sniffy.bo.core.service.CategoryService;
 import com.brand.sniffy.bo.web.controller.CategoryController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +22,7 @@ import org.springframework.web.util.WebUtils;
 privileged aspect CategoryController_Roo_Controller {
     
     @Autowired
-    CategoryRepository CategoryController.categoryRepository;
+    CategoryService CategoryController.categoryService;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String CategoryController.create(@Valid Category category, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -31,7 +31,7 @@ privileged aspect CategoryController_Roo_Controller {
             return "categorys/create";
         }
         uiModel.asMap().clear();
-        categoryRepository.save(category);
+        categoryService.saveCategory(category);
         return "redirect:/categorys/" + encodeUrlPathSegment(category.getId().toString(), httpServletRequest);
     }
     
@@ -43,7 +43,7 @@ privileged aspect CategoryController_Roo_Controller {
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String CategoryController.show(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("category", categoryRepository.findOne(id));
+        uiModel.addAttribute("category", categoryService.findCategory(id));
         uiModel.addAttribute("itemId", id);
         return "categorys/show";
     }
@@ -53,11 +53,11 @@ privileged aspect CategoryController_Roo_Controller {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("categorys", categoryRepository.findAll(new org.springframework.data.domain.PageRequest(firstResult / sizeNo, sizeNo)).getContent());
-            float nrOfPages = (float) categoryRepository.count() / sizeNo;
+            uiModel.addAttribute("categorys", categoryService.findCategoryEntries(firstResult, sizeNo));
+            float nrOfPages = (float) categoryService.countAllCategorys() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("categorys", categoryRepository.findAll());
+            uiModel.addAttribute("categorys", categoryService.findAllCategorys());
         }
         return "categorys/list";
     }
@@ -69,20 +69,20 @@ privileged aspect CategoryController_Roo_Controller {
             return "categorys/update";
         }
         uiModel.asMap().clear();
-        categoryRepository.save(category);
+        categoryService.updateCategory(category);
         return "redirect:/categorys/" + encodeUrlPathSegment(category.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
     public String CategoryController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        populateEditForm(uiModel, categoryRepository.findOne(id));
+        populateEditForm(uiModel, categoryService.findCategory(id));
         return "categorys/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
     public String CategoryController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Category category = categoryRepository.findOne(id);
-        categoryRepository.delete(category);
+        Category category = categoryService.findCategory(id);
+        categoryService.deleteCategory(category);
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -91,7 +91,7 @@ privileged aspect CategoryController_Roo_Controller {
     
     void CategoryController.populateEditForm(Model uiModel, Category category) {
         uiModel.addAttribute("category", category);
-        uiModel.addAttribute("categorys", categoryRepository.findAll());
+        uiModel.addAttribute("categorys", categoryService.findAllCategorys());
     }
     
     String CategoryController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

@@ -1,5 +1,4 @@
 package com.brand.sniffy.bo.core.model;
-
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -15,12 +14,16 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 public class Category {
 
+    private String name;
+
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private com.brand.sniffy.bo.core.model.Category category;
+    private Category category;
+
+    /**
+     */
+    private long lastUpdate;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
-    private Set<com.brand.sniffy.bo.core.model.Category> subcategories = new HashSet<com.brand.sniffy.bo.core.model.Category>();
-
-    private String name;
+    private Set<Category> subcategories = new HashSet<Category>();
 }

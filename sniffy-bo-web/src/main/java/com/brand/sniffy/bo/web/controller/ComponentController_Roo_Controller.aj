@@ -4,8 +4,8 @@
 package com.brand.sniffy.bo.web.controller;
 
 import com.brand.sniffy.bo.core.model.Component;
-import com.brand.sniffy.bo.core.repository.ComponentRatingRepository;
-import com.brand.sniffy.bo.core.repository.ComponentRepository;
+import com.brand.sniffy.bo.core.service.ComponentRatingService;
+import com.brand.sniffy.bo.core.service.ComponentService;
 import com.brand.sniffy.bo.web.controller.ComponentController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -23,10 +23,10 @@ import org.springframework.web.util.WebUtils;
 privileged aspect ComponentController_Roo_Controller {
     
     @Autowired
-    ComponentRepository ComponentController.componentRepository;
+    ComponentService ComponentController.componentService;
     
     @Autowired
-    ComponentRatingRepository ComponentController.componentRatingRepository;
+    ComponentRatingService ComponentController.componentRatingService;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String ComponentController.create(@Valid Component component, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -35,7 +35,7 @@ privileged aspect ComponentController_Roo_Controller {
             return "components/create";
         }
         uiModel.asMap().clear();
-        componentRepository.save(component);
+        componentService.saveComponent(component);
         return "redirect:/components/" + encodeUrlPathSegment(component.getId().toString(), httpServletRequest);
     }
     
@@ -47,7 +47,7 @@ privileged aspect ComponentController_Roo_Controller {
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String ComponentController.show(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("component", componentRepository.findOne(id));
+        uiModel.addAttribute("component", componentService.findComponent(id));
         uiModel.addAttribute("itemId", id);
         return "components/show";
     }
@@ -57,11 +57,11 @@ privileged aspect ComponentController_Roo_Controller {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("components", componentRepository.findAll(new org.springframework.data.domain.PageRequest(firstResult / sizeNo, sizeNo)).getContent());
-            float nrOfPages = (float) componentRepository.count() / sizeNo;
+            uiModel.addAttribute("components", componentService.findComponentEntries(firstResult, sizeNo));
+            float nrOfPages = (float) componentService.countAllComponents() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("components", componentRepository.findAll());
+            uiModel.addAttribute("components", componentService.findAllComponents());
         }
         return "components/list";
     }
@@ -73,20 +73,20 @@ privileged aspect ComponentController_Roo_Controller {
             return "components/update";
         }
         uiModel.asMap().clear();
-        componentRepository.save(component);
+        componentService.updateComponent(component);
         return "redirect:/components/" + encodeUrlPathSegment(component.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
     public String ComponentController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        populateEditForm(uiModel, componentRepository.findOne(id));
+        populateEditForm(uiModel, componentService.findComponent(id));
         return "components/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
     public String ComponentController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Component component = componentRepository.findOne(id);
-        componentRepository.delete(component);
+        Component component = componentService.findComponent(id);
+        componentService.deleteComponent(component);
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -95,7 +95,7 @@ privileged aspect ComponentController_Roo_Controller {
     
     void ComponentController.populateEditForm(Model uiModel, Component component) {
         uiModel.addAttribute("component", component);
-        uiModel.addAttribute("componentratings", componentRatingRepository.findAll());
+        uiModel.addAttribute("componentratings", componentRatingService.findAllComponentRatings());
     }
     
     String ComponentController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
