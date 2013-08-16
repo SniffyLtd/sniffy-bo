@@ -7,14 +7,6 @@ import com.brand.sniffy.bo.core.model.Country;
 
 privileged aspect Country_Roo_JavaBean {
     
-    public String Country.getName() {
-        return this.name;
-    }
-    
-    public void Country.setName(String name) {
-        this.name = name;
-    }
-    
     public String Country.getCode() {
         return this.code;
     }
@@ -29,6 +21,14 @@ privileged aspect Country_Roo_JavaBean {
     
     public void Country.setLastUpdate(long lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+    
+    public String Country.getName() {
+        return this.name;
+    }
+    
+    public void Country.setName(String name) {
+        this.name = name;
     }
     
 }

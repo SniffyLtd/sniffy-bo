@@ -129,3 +129,10 @@ service type --interface ~.service.CountryService --entity com.brand.sniffy.bo.c
 service type --interface ~.service.ProductService --entity com.brand.sniffy.bo.core.model.Product
 service type --interface ~.service.CategoryService --entity com.brand.sniffy.bo.core.model.Category
 service type --interface ~.service.ProducerService --entity com.brand.sniffy.bo.core.model.Producer
+focus --class ~.model.Country
+// [failed] field string --fieldName name --unique true
+field string --fieldName name --unique true
+module focus --moduleName sniffy-bo-mobile-api 
+dependency add --groupId org.json --artifactId json --version 20090211
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-08-16 23:31:23

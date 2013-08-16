@@ -118,7 +118,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Country, String> ApplicationConversionServiceFactoryBean.getCountryToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.brand.sniffy.bo.core.model.Country, java.lang.String>() {
             public String convert(Country country) {
-                return new StringBuilder().append(country.getName()).append(' ').append(country.getCode()).append(' ').append(country.getLastUpdate()).toString();
+                return new StringBuilder().append(country.getCode()).append(' ').append(country.getLastUpdate()).append(' ').append(country.getName()).toString();
             }
         };
     }
