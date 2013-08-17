@@ -11,11 +11,14 @@ import org.json.JSONObject;
 @RooJpaActiveRecord
 public class ComponentRating {
 
+	
     private static final String COLOR_FIELD = "color";
 
 	private static final String TITLE_FIELD = "title";
 
 	private static final String DESCRIPTION_FIELD = "description";
+
+	private static final String ID_FIELD = "id";
 
 	private String color;
 
@@ -29,6 +32,7 @@ public class ComponentRating {
 
 	public JSONObject toJson() throws JSONException{
 		JSONObject rating = new JSONObject();
+		rating.put(ID_FIELD, this.getId());
 		rating.put(COLOR_FIELD, color);
 		rating.put(TITLE_FIELD, title);
 		rating.put(DESCRIPTION_FIELD, description);
