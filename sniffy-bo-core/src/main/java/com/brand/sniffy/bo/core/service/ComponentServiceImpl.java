@@ -1,6 +1,7 @@
 package com.brand.sniffy.bo.core.service;
 
 import java.util.Date;
+import java.util.List;
 
 import com.brand.sniffy.bo.core.model.Component;
 import com.brand.sniffy.bo.core.repository.ComponentRepository;
@@ -23,5 +24,10 @@ public class ComponentServiceImpl implements ComponentService {
 	public Component updateComponent(Component component) {
 		component.setLastUpdate(new Date().getTime());
 		return componentRepository.save(component);
+	}
+
+	@Override
+	public List<Component> findComponentsChangedAfter(Long lastSynchronization) {
+		return componentRepository.findByLastUpdateGreaterThan(lastSynchronization);
 	}
 }

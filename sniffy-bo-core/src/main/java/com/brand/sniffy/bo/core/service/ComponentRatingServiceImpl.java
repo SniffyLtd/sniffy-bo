@@ -1,6 +1,7 @@
 package com.brand.sniffy.bo.core.service;
 
 import java.util.Date;
+import java.util.List;
 
 import com.brand.sniffy.bo.core.model.ComponentRating;
 import com.brand.sniffy.bo.core.repository.ComponentRatingRepository;
@@ -22,5 +23,11 @@ public class ComponentRatingServiceImpl implements ComponentRatingService {
 	public ComponentRating updateComponentRating(ComponentRating componentRating) {
 		componentRating.setLastUpdate(new Date().getTime());
 		return componentRatingRepository.save(componentRating);
+	}
+
+	@Override
+	public List<ComponentRating> findComponentRatingsChangedAfter(
+			Long lastSynchronization) {
+		return componentRatingRepository.findByLastUpdateGreaterThan(lastSynchronization);
 	}
 }

@@ -73,4 +73,38 @@ public class SynchronizationServiceImpl implements SynchronizationService{
 		result.put(CATEGORIES_FIELD, categoriesJson);
 		return result;
 	}
+
+	@Override
+	public JSONObject differentialSynchronization(
+			Long lastSynchronization) throws JSONException {
+		JSONObject result = new JSONObject();
+		List<ComponentRating> ratings = componentRatingService.findComponentRatingsChangedAfter(lastSynchronization);
+		JSONArray ratingsJson = new JSONArray();
+		for(ComponentRating rating : ratings){
+			ratingsJson.put(rating.toJson());
+		}
+		result.put(COMPONENT_RATINGS_FIELD, ratingsJson);
+		
+		List<Component> components = componentService.findComponentsChangedAfter(lastSynchronization);
+		JSONArray componentsJson = new JSONArray();
+		for(Component component : components){
+			componentsJson.put(component.toJson());
+		}
+		result.put(COMPONENTS_FIELD, componentsJson);
+		
+		List<Country> countries = countryService.findCountrysChangedAfter(lastSynchronization);
+		JSONArray countriesJson = new JSONArray();
+		for(Country country : countries){
+			countriesJson.put(country.toJson());
+		}
+		result.put(COUNTRIES_FIELD, countriesJson);
+		
+		List<Category> categories = categoryService.findCategorysChangedAfter(lastSynchronization);
+		JSONArray categoriesJson = new JSONArray();
+		for(Category category : categories){
+			categoriesJson.put(category.toJson());
+		}
+		result.put(CATEGORIES_FIELD, categoriesJson);
+		return result;
+	}
 }

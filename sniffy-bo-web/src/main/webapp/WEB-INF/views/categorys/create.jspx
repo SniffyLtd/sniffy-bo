@@ -3,8 +3,6 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_com_brand_sniffy_bo_core_model_Category" modelAttribute="category" path="/categorys" render="${empty dependencies}" z="lQdfzko0JBbOUz0N8tJ0aVuI1ic=">
-        <field:select field="category" id="c_com_brand_sniffy_bo_core_model_Category_category" itemValue="id" items="${categorys}" path="/categorys" z="rbANP/ks/M4onH/491xY1gJIWkc="/>
-        <field:simple field="subcategories" id="c_com_brand_sniffy_bo_core_model_Category_subcategories" messageCode="entity_reference_not_managed" messageCodeAttribute="Category" z="/WCydkrWCN6P7IstpoNDK1fyf+U="/>
         <field:input field="name" id="c_com_brand_sniffy_bo_core_model_Category_name" z="TRry3jm6basW+ODCz8ft8ihvbZk="/>
         <field:input field="lastUpdate" id="c_com_brand_sniffy_bo_core_model_Category_lastUpdate" z="hNv0K1AEUklvQ+SpgvwTWqvxTfE="/>
     </form:create>

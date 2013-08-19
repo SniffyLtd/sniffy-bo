@@ -136,3 +136,8 @@ module focus --moduleName sniffy-bo-mobile-api
 dependency add --groupId org.json --artifactId json --version 20090211
 exit
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-08-16 23:31:23
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-08-17 11:41:38
+focus --class sniffy-bo-core|~.model.Category 
+field reference --type ~.model.Category --fieldName category --cardinality MANY_TO_ONE --joinColumnName category_id --notNull false --permitReservedWords true
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-08-19 08:18:01

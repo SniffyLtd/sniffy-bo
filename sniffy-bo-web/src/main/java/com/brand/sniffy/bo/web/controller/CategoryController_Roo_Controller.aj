@@ -91,7 +91,6 @@ privileged aspect CategoryController_Roo_Controller {
     
     void CategoryController.populateEditForm(Model uiModel, Category category) {
         uiModel.addAttribute("category", category);
-        uiModel.addAttribute("categorys", categoryService.findAllCategorys());
     }
     
     String CategoryController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

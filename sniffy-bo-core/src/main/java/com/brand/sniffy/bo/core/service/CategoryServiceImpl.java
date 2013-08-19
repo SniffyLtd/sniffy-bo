@@ -1,6 +1,7 @@
 package com.brand.sniffy.bo.core.service;
 
 import java.util.Date;
+import java.util.List;
 
 import com.brand.sniffy.bo.core.model.Category;
 import com.brand.sniffy.bo.core.repository.CategoryRepository;
@@ -22,5 +23,10 @@ public class CategoryServiceImpl implements CategoryService {
 	public Category updateCategory(Category category) {
 		category.setLastUpdate(new Date().getTime());
 		return categoryRepository.save(category);
+	}
+
+	@Override
+	public List<Category> findCategorysChangedAfter(Long lastSynchronization) {
+		return categoryRepository.findByLastUpdateGreaterThan(lastSynchronization);
 	}
 }

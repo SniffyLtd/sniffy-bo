@@ -3,7 +3,6 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_com_brand_sniffy_bo_core_model_Category" object="${category}" path="/categorys" z="/PRGz0x7Pi6Y5DzCVL9ZJZUeMdM=">
-        <field:display field="category" id="s_com_brand_sniffy_bo_core_model_Category_category" object="${category}" z="YAzHYBJokbLuGalzKD5HIVV5CNU="/>
         <field:display field="name" id="s_com_brand_sniffy_bo_core_model_Category_name" object="${category}" z="DNVBjj1aV42E5M5PNTCLzUT3Xyk="/>
         <field:display field="lastUpdate" id="s_com_brand_sniffy_bo_core_model_Category_lastUpdate" object="${category}" z="53YVd3HC4J4tJ4UfJ3YicRStAuQ="/>
     </page:show>

@@ -50,8 +50,19 @@ public class SynchronizationController {
 	
 	@RequestMapping(value="/{lastSynchronizationDate}",
 		    headers = {"content-type=application/json"})
-	public @ResponseBody String  synchronization(@PathVariable Long lastSynchronizationDate){
-		return "success";
+	public ResponseEntity<String>  synchronization(@PathVariable Long lastSynchronizationDate)throws JSONException{
+		try{
+			JSONObject response = new JSONObject();
+			response.put(SYNCHRONIZATION_TIME_FIELD, new Date().getTime());
+			JSONObject result = synchronizationService.differentialSynchronization(lastSynchronizationDate);
+			response.put(RESULT_FIELD, result);
+			return new ResponseEntity<String>(response.toString(), responseHeaders(), HttpStatus.OK);
+		}
+		catch(JSONException e){
+			JSONObject response = new JSONObject();
+			response.put(REASON_FIELD, e.getMessage());
+			return new ResponseEntity<String>(response.toString(), responseHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 	
 	private HttpHeaders responseHeaders(){
