@@ -7,6 +7,7 @@
         <field:input field="equivalentNames" id="c_com_brand_sniffy_bo_core_model_Component_equivalentNames" z="s8UtM63kPEtme1WfxhEstkwlLbw="/>
         <field:select field="rating" id="c_com_brand_sniffy_bo_core_model_Component_rating" itemValue="id" items="${componentratings}" path="/componentratings" z="hSmmOh9tGBP78xJkNduZcfXP94w="/>
         <field:input field="lastUpdate" id="c_com_brand_sniffy_bo_core_model_Component_lastUpdate" z="R7vCibMEVSqQPVXdIqUFy21wocA="/>
+        <field:input field="description" id="c_com_brand_sniffy_bo_core_model_Component_description" z="iTOAwuM84v2IBsIODdGDhvBHHuk="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_brand_sniffy_bo_core_model_Component" render="${not empty dependencies}" z="Wi6euvipi1BdZESFoSe7vBco45I="/>
 </div>

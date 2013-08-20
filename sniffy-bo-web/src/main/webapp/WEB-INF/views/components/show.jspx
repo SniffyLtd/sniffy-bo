@@ -7,5 +7,6 @@
         <field:display field="equivalentNames" id="s_com_brand_sniffy_bo_core_model_Component_equivalentNames" object="${component}" z="61qS3b5PDy4Oj0+/erJDb5Wk+Ds="/>
         <field:display field="rating" id="s_com_brand_sniffy_bo_core_model_Component_rating" object="${component}" z="cG2iGgB0qzTbLa/z6htMK1xcguI="/>
         <field:display field="lastUpdate" id="s_com_brand_sniffy_bo_core_model_Component_lastUpdate" object="${component}" z="WWWqF944xTsj2JYLk9GIZP6Fib0="/>
+        <field:display field="description" id="s_com_brand_sniffy_bo_core_model_Component_description" object="${component}" z="oVpFLaGt2VG4Il23yJqSTJ+WmVg="/>
     </page:show>
 </div>

@@ -40,4 +40,12 @@ privileged aspect Component_Roo_JavaBean {
         this.lastUpdate = lastUpdate;
     }
     
+    public String Component.getDescription() {
+        return this.description;
+    }
+    
+    public void Component.setDescription(String description) {
+        this.description = description;
+    }
+    
 }

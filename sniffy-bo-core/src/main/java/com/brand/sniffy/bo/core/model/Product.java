@@ -5,6 +5,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -21,6 +23,10 @@ public class Product {
     private static final String BARCODE_FIELD = "barcode";
 
     private static final String DESCRIPTION_FIELD = "description";
+
+	private static final String CATEGORY_ID_FIELD = "category_id";
+
+	private static final String COMPONENTS_LIST_FIELD = "components";
 
     private String barcode;
 
@@ -45,6 +51,13 @@ public class Product {
             product.put(NAME_FIELD, name);
             product.put(BARCODE_FIELD, barcode);
             product.put(DESCRIPTION_FIELD, description);
+            product.put(CATEGORY_ID_FIELD, category.getId());
+            JSONArray componentsIds = new JSONArray();
+            
+            for(Component component : components){
+            	componentsIds.put(component.getId());
+            }
+            product.put(COMPONENTS_LIST_FIELD, componentsIds);
         } catch (JSONException e) {
             throw new IllegalStateException(e);
         }
