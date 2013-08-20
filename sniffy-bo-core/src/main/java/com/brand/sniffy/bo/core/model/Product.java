@@ -30,6 +30,8 @@ public class Product {
 
 	private static final String ID_FIELD = "id";
 
+	private static final String PRODUCER_FIELD = "producer";
+
     private String barcode;
 
     private String name;
@@ -47,23 +49,20 @@ public class Product {
     @JoinColumn(name = "producer_id")
     private Producer producer;
 
-    public JSONObject toJson() {
+    public JSONObject toJson() throws JSONException {
         JSONObject product = new JSONObject();
-        try {
             product.put(ID_FIELD, getId());
             product.put(NAME_FIELD, name);
             product.put(BARCODE_FIELD, barcode);
             product.put(DESCRIPTION_FIELD, description);
             product.put(CATEGORY_ID_FIELD, category.getId());
+            product.put(PRODUCER_FIELD, producer.toJson());
             JSONArray componentsIds = new JSONArray();
             
             for(Component component : components){
             	componentsIds.put(component.getId());
             }
             product.put(COMPONENTS_LIST_FIELD, componentsIds);
-        } catch (JSONException e) {
-            throw new IllegalStateException(e);
-        }
         return product;
     }
 
