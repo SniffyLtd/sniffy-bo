@@ -28,6 +28,8 @@ public class Product {
 
 	private static final String COMPONENTS_LIST_FIELD = "components";
 
+	private static final String ID_FIELD = "id";
+
     private String barcode;
 
     private String name;
@@ -48,6 +50,7 @@ public class Product {
     public JSONObject toJson() {
         JSONObject product = new JSONObject();
         try {
+            product.put(ID_FIELD, getId());
             product.put(NAME_FIELD, name);
             product.put(BARCODE_FIELD, barcode);
             product.put(DESCRIPTION_FIELD, description);
