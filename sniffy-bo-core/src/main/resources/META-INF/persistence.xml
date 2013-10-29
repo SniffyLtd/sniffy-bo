@@ -14,3 +14,5 @@
         </properties>
     </persistence-unit>
 </persistence>
+
+<!-- export DATABASE_URL=postgres://sniffy:sniffy_bo@localhost:5432/sniffy_bo -->

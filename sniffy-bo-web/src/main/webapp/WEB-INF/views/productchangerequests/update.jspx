@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_brand_sniffy_bo_core_model_ProductChangeRequest" modelAttribute="productChangeRequest" path="/productchangerequests" versionField="Version" z="53+vtIopYhPrghOHUyNl2xA9rRA=">
+        <field:select field="product" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_product" itemValue="id" items="${products}" path="/products" z="2qKtjnMtXd4dO1+m5duy/Fmyt3o="/>
+        <field:input field="name" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_name" z="H/GuA3pCju1Ie1nSQOIJiHdmUVo="/>
+        <field:input field="source" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_source" z="YsfKRZw3woNwAzutymDB/MjrwWo="/>
+        <field:input field="price" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_price" validationMessageCode="field_invalid_number" z="6gPr+e2LE0DsE6HPAoZVj+lIQg8="/>
+        <field:datetime dateTimePattern="${productChangeRequest_requestdate_date_format}" field="requestDate" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_requestDate" z="PpIZ4+cJx0gtuE2f9ltTzak2quo="/>
+        <field:input field="description" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_description" z="huPCimT6ELhffkWv9erP5+rW+Hg="/>
+        <field:select field="components" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_components" itemValue="id" items="${components}" multiple="true" path="/components" z="vgtnHi+lMKKlT6dNAct+w92Uw9Y="/>
+        <field:select field="producer" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_producer" itemValue="id" items="${producers}" path="/producers" z="4+alJAEpnhdC6fJbGgz1OyzibPQ="/>
+        <field:input field="barcode" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_barcode" z="kj9q1uHx/FD0O9E/n7Rv9zeV+zI="/>
+    </form:update>
+</div>

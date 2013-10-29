@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show create="false" id="ps_com_brand_sniffy_bo_core_model_ProductChangeRequest" object="${productchangerequest}" path="/productchangerequests" z="9MIjaIQZ51dNgSILWJ3mM4ahMJc=">
+        <field:display field="product" id="s_com_brand_sniffy_bo_core_model_ProductChangeRequest_product" object="${productchangerequest}" z="VDMfeWiTTJpQytLznl/MWnRitdc="/>
+        <field:display field="name" id="s_com_brand_sniffy_bo_core_model_ProductChangeRequest_name" object="${productchangerequest}" z="U/uCSDIs2OH8y/02lnUiEnWF6Sc="/>
+        <field:display field="source" id="s_com_brand_sniffy_bo_core_model_ProductChangeRequest_source" object="${productchangerequest}" z="D6R9iVq1uvNvqH6zaBrb2Q70gD0="/>
+        <field:display field="price" id="s_com_brand_sniffy_bo_core_model_ProductChangeRequest_price" object="${productchangerequest}" z="DlaY902RufOnFBC86upIOPOxRh0="/>
+        <field:display date="true" dateTimePattern="${productChangeRequest_requestdate_date_format}" field="requestDate" id="s_com_brand_sniffy_bo_core_model_ProductChangeRequest_requestDate" object="${productchangerequest}" z="Rzv6fCwc1Llr2/4rJW7QnGMiehE="/>
+        <field:display field="description" id="s_com_brand_sniffy_bo_core_model_ProductChangeRequest_description" object="${productchangerequest}" z="UUmDSLepGcSmn48FDKXsPEuAJRA="/>
+        <field:display field="components" id="s_com_brand_sniffy_bo_core_model_ProductChangeRequest_components" object="${productchangerequest}" z="AuuJAWqznLCvbYnAIYa9t3hHmrM="/>
+        <field:display field="producer" id="s_com_brand_sniffy_bo_core_model_ProductChangeRequest_producer" object="${productchangerequest}" z="Qs4pXdDMDwNa4087ya5JDdwxGh8="/>
+        <field:display field="barcode" id="s_com_brand_sniffy_bo_core_model_ProductChangeRequest_barcode" object="${productchangerequest}" z="QvsUB8hT/Q7cxnQDABoazMfG6+g="/>
+    </page:show>
+</div>

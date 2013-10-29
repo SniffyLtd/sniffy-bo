@@ -9,6 +9,7 @@ import com.brand.sniffy.bo.core.model.ComponentRating;
 import com.brand.sniffy.bo.core.model.Country;
 import com.brand.sniffy.bo.core.model.Producer;
 import com.brand.sniffy.bo.core.model.Product;
+import com.brand.sniffy.bo.core.model.ProductChangeRequest;
 import com.brand.sniffy.bo.core.service.CategoryService;
 import com.brand.sniffy.bo.core.service.ComponentRatingService;
 import com.brand.sniffy.bo.core.service.ComponentService;
@@ -187,6 +188,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<ProductChangeRequest, String> ApplicationConversionServiceFactoryBean.getProductChangeRequestToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.brand.sniffy.bo.core.model.ProductChangeRequest, java.lang.String>() {
+            public String convert(ProductChangeRequest productChangeRequest) {
+                return new StringBuilder().append(productChangeRequest.getName()).append(' ').append(productChangeRequest.getSource()).append(' ').append(productChangeRequest.getPrice()).append(' ').append(productChangeRequest.getRequestDate()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, ProductChangeRequest> ApplicationConversionServiceFactoryBean.getIdToProductChangeRequestConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.brand.sniffy.bo.core.model.ProductChangeRequest>() {
+            public com.brand.sniffy.bo.core.model.ProductChangeRequest convert(java.lang.Long id) {
+                return ProductChangeRequest.findProductChangeRequest(id);
+            }
+        };
+    }
+    
+    public Converter<String, ProductChangeRequest> ApplicationConversionServiceFactoryBean.getStringToProductChangeRequestConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.brand.sniffy.bo.core.model.ProductChangeRequest>() {
+            public com.brand.sniffy.bo.core.model.ProductChangeRequest convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), ProductChangeRequest.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getCategoryToStringConverter());
         registry.addConverter(getIdToCategoryConverter());
@@ -206,6 +231,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getProductToStringConverter());
         registry.addConverter(getIdToProductConverter());
         registry.addConverter(getStringToProductConverter());
+        registry.addConverter(getProductChangeRequestToStringConverter());
+        registry.addConverter(getIdToProductChangeRequestConverter());
+        registry.addConverter(getStringToProductChangeRequestConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

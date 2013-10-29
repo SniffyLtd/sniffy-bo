@@ -49,6 +49,10 @@ public class Product {
     @JoinColumn(name = "producer_id")
     private Producer producer;
 
+    /**
+     */
+    private long lastUpdate;
+    
     public JSONObject toJson() throws JSONException {
         JSONObject product = new JSONObject();
             product.put(ID_FIELD, getId());
@@ -66,7 +70,4 @@ public class Product {
         return product;
     }
 
-    /**
-     */
-    private long lastUpdate;
 }
