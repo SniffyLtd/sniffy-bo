@@ -168,3 +168,16 @@ web mvc all --package ~.controller
 web mvc install language --code it
 exit
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-29 08:07:45
+// Spring Roo UNKNOWN VERSION log opened at 2013-10-29 17:01:03
+// Spring Roo UNKNOWN VERSION log opened at 2013-10-29 17:05:13
+exit
+// Spring Roo UNKNOWN VERSION log closed at 2013-10-29 17:05:19
+// Spring Roo UNKNOWN VERSION log opened at 2013-10-29 17:05:50
+exit
+// Spring Roo UNKNOWN VERSION log closed at 2013-10-29 17:06:04
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-10-29 17:08:10
+exit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-10-29 17:08:41
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-10-29 17:09:15
+logging setup --level INFO
+logging setup --level ERROR 
