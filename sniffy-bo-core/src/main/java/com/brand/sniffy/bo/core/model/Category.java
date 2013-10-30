@@ -34,4 +34,8 @@ public class Category {
         return category;
     }
 
+    @Override
+    public String toString(){
+    	return name;
+    }
 }

@@ -4,7 +4,7 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_com_brand_sniffy_bo_core_model_Category" modelAttribute="category" path="/categorys" render="${empty dependencies}" z="lQdfzko0JBbOUz0N8tJ0aVuI1ic=">
         <field:input field="name" id="c_com_brand_sniffy_bo_core_model_Category_name" z="TRry3jm6basW+ODCz8ft8ihvbZk="/>
-        <field:input field="lastUpdate" id="c_com_brand_sniffy_bo_core_model_Category_lastUpdate" z="hNv0K1AEUklvQ+SpgvwTWqvxTfE="/>
+        <field:input field="lastUpdate" id="c_com_brand_sniffy_bo_core_model_Category_lastUpdate" render="false" z="user-managed"/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_brand_sniffy_bo_core_model_Category" render="${not empty dependencies}" z="8xaK+2/9xYLKEDdlNgHSs2l8Ra0="/>
 </div>

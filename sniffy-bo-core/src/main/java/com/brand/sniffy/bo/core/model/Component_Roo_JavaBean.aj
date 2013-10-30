@@ -16,14 +16,6 @@ privileged aspect Component_Roo_JavaBean {
         this.name = name;
     }
     
-    public String Component.getEquivalentNames() {
-        return this.equivalentNames;
-    }
-    
-    public void Component.setEquivalentNames(String equivalentNames) {
-        this.equivalentNames = equivalentNames;
-    }
-    
     public ComponentRating Component.getRating() {
         return this.rating;
     }
@@ -32,20 +24,28 @@ privileged aspect Component_Roo_JavaBean {
         this.rating = rating;
     }
     
-    public long Component.getLastUpdate() {
-        return this.lastUpdate;
-    }
-    
-    public void Component.setLastUpdate(long lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
-    
     public String Component.getDescription() {
         return this.description;
     }
     
     public void Component.setDescription(String description) {
         this.description = description;
+    }
+    
+    public String Component.getEquivalentNames() {
+        return this.equivalentNames;
+    }
+    
+    public void Component.setEquivalentNames(String equivalentNames) {
+        this.equivalentNames = equivalentNames;
+    }
+    
+    public long Component.getLastUpdate() {
+        return this.lastUpdate;
+    }
+    
+    public void Component.setLastUpdate(long lastUpdate) {
+        this.lastUpdate = lastUpdate;
     }
     
 }

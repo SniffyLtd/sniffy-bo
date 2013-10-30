@@ -10,6 +10,6 @@
         <field:display field="email" id="s_com_brand_sniffy_bo_core_model_Producer_email" object="${producer}" z="ABFSlYfUbkq5CqHRtySmBJ0zjw4="/>
         <field:display field="country" id="s_com_brand_sniffy_bo_core_model_Producer_country" object="${producer}" z="ar3lgocUy1Oaog4MxRDm4MtA5o4="/>
         <field:display field="code" id="s_com_brand_sniffy_bo_core_model_Producer_code" object="${producer}" z="9B6hGVdLSJP+3ODkxFN3vXy+XSc="/>
-        <field:display field="lastUpdate" id="s_com_brand_sniffy_bo_core_model_Producer_lastUpdate" object="${producer}" z="VcE439WrTCuNUmLkyj+POK2rt8s="/>
+        <field:display field="lastUpdate" id="s_com_brand_sniffy_bo_core_model_Producer_lastUpdate" object="${producer}" render="false" z="user-managed"/>
     </page:show>
 </div>

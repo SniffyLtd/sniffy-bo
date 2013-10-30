@@ -16,17 +16,17 @@
     </c:if>
 
     <div id="_${fn:escapeXml(id)}_id">
-      <label for="_${fn:escapeXml(field)}_id">
+      <label for="_${fn:escapeXml(field)}_id" class="control-label">
         <c:out value="${fn:escapeXml(label)}" />
-        :
       </label>
+      <div class="controls">
       <spring:url value="${path}" var="create_url">
         <spring:param name="form" />
       </spring:url>
-      <a href="${create_url}">
-        <spring:url value="/resources/images/add.png" var="create_img_url" />
+      <a href="${create_url}" class="btn">
+        <spring:url value="/resources/bootstrap/img/glyphicons-halflings.png" var="create_img_url" />
         <spring:message arguments="${field}" code="global_menu_new" var="add_message" htmlEscape="false" />
-        <img alt="${fn:escapeXml(add_message)}" src="${create_img_url}" title="${fn:escapeXml(add_message)}" />
+        <img alt="${fn:escapeXml(add_message)}" class="icon-plus-sign" src="${create_img_url}" title="${fn:escapeXml(add_message)}" />
       </a>
       <c:out value=" " />
       <spring:message arguments="${label}" code="entity_not_found" />
@@ -35,6 +35,7 @@
         <spring:message code="field_required" />
         )
       </c:if>
+      </div>
     </div>
     <br />
   </c:if>

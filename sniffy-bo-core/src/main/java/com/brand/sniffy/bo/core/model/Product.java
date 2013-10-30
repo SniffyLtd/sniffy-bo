@@ -69,5 +69,13 @@ public class Product {
             product.put(COMPONENTS_LIST_FIELD, componentsIds);
         return product;
     }
+    
+    @Override
+    public String toString(){
+    	if(producer != null){
+    		return producer.getName() + " " + name;
+    	}
+    	return name;
+    }
 
 }

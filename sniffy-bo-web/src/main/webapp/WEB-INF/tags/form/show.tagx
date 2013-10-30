@@ -41,7 +41,9 @@
     <util:panel id="${id}" title="${title_msg}" openPane="${openPane}">
       <c:choose>
         <c:when test="${not empty object}">
+        <div  class="form-horizontal">
           <jsp:doBody />
+          </div>
           <div class="quicklinks">
             <span>
               <c:if test="${delete}">

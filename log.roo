@@ -181,3 +181,21 @@ exit
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-10-29 17:09:15
 logging setup --level INFO
 logging setup --level ERROR 
+module focus --moduleName sniffy-bo-web 
+logging setup --level ERROR 
+logging setup --level INFO
+module focus --moduleName sniffy-bo-core 
+logging setup --level ERROR 
+logging setup --level INFO
+exit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-10-30 17:21:34
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-10-30 17:21:39
+exit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-10-30 17:53:33
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-10-30 17:53:36
+exit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-10-30 20:19:22
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-10-30 20:19:25
+exit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-10-30 22:57:58
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-10-30 22:58:01

@@ -56,13 +56,14 @@
     </c:set>
     
     <div id="_${fn:escapeXml(id)}_id">
-      <label for="_${sec_field}_id">
+      <label for="_${sec_field}_id"  class="control-label" >
         <c:out value="${fn:escapeXml(label)}" />
-        :
+        
       </label>
+       <div class="controls">
       <c:choose>
         <c:when test="${disableFormBinding}">
-          <input id="_${sec_field}_id" name="${sec_field}" type="${fn:escapeXml(type)}" />
+          <input  id="_${sec_field}_id" name="${sec_field}" type="${fn:escapeXml(type)}" />
         </c:when>
         <c:otherwise>
           <c:choose>
@@ -77,6 +78,7 @@
           <form:errors cssClass="errors" id="_${sec_field}_error_id" path="${sec_field}" />
         </c:otherwise>
       </c:choose>
+      </div>
       <c:choose>
         <c:when test="${required}">
           <spring:message code="field_required" var="field_required" htmlEscape="false" />
@@ -99,9 +101,9 @@
       <c:if test="${!empty validationRegex}">
         <c:set var="sec_validation_regex" value="regExp : '${validationRegex}', " />
       </c:if>
-      <script type="text/javascript">
+      <!-- script type="text/javascript">
         Spring.addDecoration(new Spring.ElementDecoration({elementId : '_${sec_field}_id', widgetType : 'dijit.form.ValidationTextBox', widgetAttrs : {promptMessage: '${sec_field_validation}', invalidMessage: '${sec_field_invalid}', required : ${required}, ${sec_validation_regex} missingMessage : '${sec_field_required}' }})); 
-      </script>
+      </script-->
     </div>
     <br />
   </c:if>

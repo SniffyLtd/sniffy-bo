@@ -16,13 +16,20 @@
 	</head>
 	
   	<body class="tundra spring">
-   		<div id="wrapper">
-		    <tiles:insertAttribute name="header" ignore="true" />
-		    <tiles:insertAttribute name="menu" ignore="true" />   
-		    <div id="main">
-	    		<tiles:insertAttribute name="body"/> 
+   		
+		    <div class="container">
+		    	<tiles:insertAttribute name="header" ignore="true" />
+		    	<div class="row-fluid">
+		    		<div class="span3">
+		    			<tiles:insertAttribute name="menu" ignore="true" /> 
+		    		</div>
+		    		<div class="span9">
+		    			<tiles:insertAttribute name="body"/> 
+		    		</div>
+		    	</div>
+		    	
 		    	<tiles:insertAttribute name="footer" ignore="true"/>
 		    </div>
-		</div>
+		
 	</body>
 </html>

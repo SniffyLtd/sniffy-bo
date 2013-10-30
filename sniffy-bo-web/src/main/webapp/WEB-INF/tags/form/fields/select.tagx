@@ -44,17 +44,18 @@
     <div id="_${fn:escapeXml(id)}_id">
       <c:choose>
         <c:when test="${not empty items}">
-          <label for="_${sec_field}_id">
+          <label for="_${sec_field}_id"  class="control-label">
             <c:out value="${fn:escapeXml(label)}" />
-            :
+            
           </label>
+          <div class="controls">
           <c:choose>
             <c:when test="${empty itemValue}">
               <c:choose>
                 <c:when test="${disableFormBinding}">
                   <c:choose>
                     <c:when test="${multiple}">
-                      <select id="_${sec_field}_id" name="${sec_field}" multiple="${multiple}">
+                      <select id="_${sec_field}_id" name="${sec_field}" multiple="${multiple}" >
                       <c:forEach items="${items}" var="item">
                         <option value="${item}">
                         <c:choose>
@@ -68,9 +69,10 @@
                         </option>
                       </c:forEach>
                       </select>
+                  
                     </c:when>
                     <c:otherwise>
-                      <select id="_${sec_field}_id" name="${sec_field}">
+                      <select id="_${sec_field}_id" name="${sec_field}" >
                       <c:forEach items="${items}" var="item">
                         <option value="${item}">
                         <c:choose>
@@ -120,7 +122,7 @@
                 <c:when test="${disableFormBinding}">
                   <c:choose>
                     <c:when test="${multiple}">
-                      <select id="_${sec_field}_id" name="${sec_field}" multiple="${multiple}">
+                      <select id="_${sec_field}_id" name="${sec_field}" multiple="${multiple}" class="multiselect"  >
                         <c:forEach items="${items}" var="item">
                           <option value="${item[fn:escapeXml(itemValue)]}">
                             <c:choose>
@@ -136,7 +138,7 @@
                       </select>
                     </c:when>
                     <c:otherwise>
-                      <select id="_${sec_field}_id" name="${sec_field}" multiple="${multiple}">
+                      <select id="_${sec_field}_id" name="${sec_field}" multiple="${multiple}" >
                         <c:forEach items="${items}" var="item">
                           <option value="${item[fn:escapeXml(itemValue)]}">
                             <c:choose>
@@ -182,10 +184,14 @@
               </c:choose>
             </c:otherwise>
           </c:choose>
+    	  </div>
           <c:choose>
             <c:when test="${multiple == false}">
-              <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_${sec_field}_id', widgetType: 'dijit.form.FilteringSelect', widgetAttrs : {hasDownArrow : true}})); </script>
+              <!-- script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_${sec_field}_id', widgetType: 'dijit.form.FilteringSelect', widgetAttrs : {hasDownArrow : true}})); </script-->
             </c:when>
+            <c:otherwise>
+            	<script type="text/javascript">$(document).ready(function(){ $('#_${sec_field}_id').multiselect({enableFiltering: true,buttonWidth: '400px',maxHeight: 400});})</script>
+            </c:otherwise>
             <!-- disabled due to http://jira.springframework.org/browse/ROO-909 <c:otherwise> <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_${field}_id', widgetType: 'dijit.form.MultiSelect', widgetAttrs : {}})); </script> </c:otherwise> -->
           </c:choose>
         </c:when>

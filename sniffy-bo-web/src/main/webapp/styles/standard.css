@@ -1,6 +1,6 @@
 /* main elements */
 
-body,div,td {
+/*body,div,td {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #666;
@@ -22,14 +22,14 @@ body {
 	margin-right: auto;
 	margin-left: auto;
 
-	/* fix max-width incompatibility in IE6 */
+	
 	width:expression(document.body.clientWidth > 800? "800px": "auto" );
 	
 	overflow:hidden;
 	display:block;
 }
-
-/* header and footer elements */
+*/
+/* header and footer elements 
 
 #main {
 	overflow:hidden;
@@ -43,8 +43,8 @@ body {
 	left:0px;
 	width:220px;
 	margin-right:15px;
-}
-
+}*/
+/*
 #menu ul{
 	list-style: none;
 	margin: 0;
@@ -81,7 +81,7 @@ body {
 #menu a:hover {
 	color: #648C1D;
 	background: #fff;
-}
+}*/
 
 #footer {
 	background:#fff;
@@ -95,7 +95,7 @@ body {
 }
 
 #footer a:link {color: #7db223;}
-
+/*
 .quicklinks {
 	clear:both; 
 	padding-bottom: 15px
@@ -141,18 +141,18 @@ div .box {
 	display:block;
 	margin-left:105px;
 }
-
+*/
 /* menu elements*/
 
-a.menu, a.menu:link, a.menu:visited {display:block; width:150px; height:25px;} 
-	
+/*a.menu, a.menu:link, a.menu:visited {display:block; width:150px; height:25px;} 
+*/	
 /* text styles */
-
+/*
 h1,h2,h3 {
 	font-family: Helvetica, sans-serif;
 	color: #7db223;
-}
-
+}*/
+/*
 h1 {
 	font-size: 20px;
 	line-height: 26px;
@@ -173,14 +173,14 @@ h4 {
 	font-size: 14px;
 	line-height: 20px;
 }
-
+*/
 .errors {
 	color: red;
 	font-weight: bold;
 	display: block;
 	margin-left: 105px;
 }
-
+/*
 a {
 	text-decoration: underline;
 	font-size: 12px;
@@ -213,8 +213,8 @@ a:active {
 
 a:visited {
 	color: #7db223;
-}
-
+}*/
+/*
 li {
 	padding-top: 5px;
 	text-align: left;
@@ -224,9 +224,9 @@ ul li {
 	margin:0 0 0.25em 0;
 	padding:0;
 }
-/* table elements */
+ table elements */
 
-table {
+/*table {
 	background: #EEEEEE;
 	margin: 2px 0 0 0;
 	border: 1px solid #BBBBBB;
@@ -267,8 +267,8 @@ table thead {
 
 table a:link {color: #303030;}
 
-.utilbox {width: 18px;}
-
+.utilbox {width: 18px;}*/
+/*
 caption {
 	caption-side: top;
 	width: auto;
@@ -370,4 +370,4 @@ fieldset th {
 .flag {
 	height: 11px;
 	width: 16px;
-}
+}*/

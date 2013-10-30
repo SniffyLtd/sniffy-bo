@@ -23,15 +23,17 @@ public class Component {
 
     private String name;
 
-    private String equivalentNames;
-
     @ManyToOne
     @JoinColumn(name = "rating_id")
     private ComponentRating rating;
+    
+    private String description;
+    
+    private String equivalentNames;
+
 
     private long lastUpdate;
 
-    private String description;
 
     public JSONObject toJson() throws JSONException {
         JSONObject component = new JSONObject();
@@ -40,5 +42,10 @@ public class Component {
         component.put(EQUIVALENT_NAMES_FIELD, equivalentNames);
         component.put(RATING_FIELD, rating.getId());
         return component;
+    }
+    
+    @Override
+    public String toString(){
+    	return name;
     }
 }

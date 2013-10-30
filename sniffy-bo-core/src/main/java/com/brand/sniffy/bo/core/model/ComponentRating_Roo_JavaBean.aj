@@ -7,20 +7,20 @@ import com.brand.sniffy.bo.core.model.ComponentRating;
 
 privileged aspect ComponentRating_Roo_JavaBean {
     
-    public String ComponentRating.getColor() {
-        return this.color;
-    }
-    
-    public void ComponentRating.setColor(String color) {
-        this.color = color;
-    }
-    
     public String ComponentRating.getTitle() {
         return this.title;
     }
     
     public void ComponentRating.setTitle(String title) {
         this.title = title;
+    }
+    
+    public String ComponentRating.getColor() {
+        return this.color;
+    }
+    
+    public void ComponentRating.setColor(String color) {
+        this.color = color;
     }
     
     public String ComponentRating.getDescription() {

@@ -9,6 +9,6 @@
         <field:display field="category" id="s_com_brand_sniffy_bo_core_model_Product_category" object="${product}" z="uo+L0Do0PmBryup/GgQmym7nqi4="/>
         <field:display field="components" id="s_com_brand_sniffy_bo_core_model_Product_components" object="${product}" z="7Bh3tQ/W0DtYIc6N+W5vSYaJiZY="/>
         <field:display field="producer" id="s_com_brand_sniffy_bo_core_model_Product_producer" object="${product}" z="giTupSzN3juJqPqbfvkvlJBztfo="/>
-        <field:display field="lastUpdate" id="s_com_brand_sniffy_bo_core_model_Product_lastUpdate" object="${product}" z="j1PJjeWieAjjfez+3qayueAf8iE="/>
+        <field:display field="lastUpdate" id="s_com_brand_sniffy_bo_core_model_Product_lastUpdate" object="${product}" render="false" z="user-managed"/>
     </page:show>
 </div>

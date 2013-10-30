@@ -71,7 +71,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Component, String> ApplicationConversionServiceFactoryBean.getComponentToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.brand.sniffy.bo.core.model.Component, java.lang.String>() {
             public String convert(Component component) {
-                return new StringBuilder().append(component.getName()).append(' ').append(component.getEquivalentNames()).append(' ').append(component.getLastUpdate()).append(' ').append(component.getDescription()).toString();
+                return new StringBuilder().append(component.getName()).append(' ').append(component.getDescription()).append(' ').append(component.getEquivalentNames()).append(' ').append(component.getLastUpdate()).toString();
             }
         };
     }
@@ -95,7 +95,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<ComponentRating, String> ApplicationConversionServiceFactoryBean.getComponentRatingToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.brand.sniffy.bo.core.model.ComponentRating, java.lang.String>() {
             public String convert(ComponentRating componentRating) {
-                return new StringBuilder().append(componentRating.getColor()).append(' ').append(componentRating.getTitle()).append(' ').append(componentRating.getDescription()).append(' ').append(componentRating.getLastUpdate()).toString();
+                return new StringBuilder().append(componentRating.getTitle()).append(' ').append(componentRating.getColor()).append(' ').append(componentRating.getDescription()).append(' ').append(componentRating.getLastUpdate()).toString();
             }
         };
     }

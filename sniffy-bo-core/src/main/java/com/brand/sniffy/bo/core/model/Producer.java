@@ -62,4 +62,9 @@ public class Producer {
 		json.put(CODE_FIELD, code);
 		return json;
 	}
+	
+	@Override
+	public String toString(){
+		return name;
+	}
 }

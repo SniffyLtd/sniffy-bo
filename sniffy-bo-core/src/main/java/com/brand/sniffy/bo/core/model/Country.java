@@ -27,6 +27,7 @@ public class Country {
     /**
      */
     @Column(unique = true)
+    
     private String name;
 
 	public JSONObject toJson() throws JSONException{
@@ -36,4 +37,9 @@ public class Country {
 		country.put(CODE_FIELD, code);
 		return country;
 	}
+	
+    @Override
+    public String toString(){
+    	return name;
+    }
 }

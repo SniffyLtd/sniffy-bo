@@ -20,9 +20,9 @@ public class ComponentRating {
 
 	private static final String ID_FIELD = "id";
 
-	private String color;
-
     private String title;
+    
+	private String color;
 
     private String description;
 
@@ -38,4 +38,9 @@ public class ComponentRating {
 		rating.put(DESCRIPTION_FIELD, description);
 		return rating;
 	}
+	
+    @Override
+    public String toString(){
+    	return title;
+    }
 }

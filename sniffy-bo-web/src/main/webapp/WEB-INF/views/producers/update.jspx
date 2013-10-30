@@ -8,8 +8,8 @@
         <field:input field="phone" id="c_com_brand_sniffy_bo_core_model_Producer_phone" z="mXbdFs7+7IIiCVFFtGypPECPWNk="/>
         <field:input field="fax" id="c_com_brand_sniffy_bo_core_model_Producer_fax" z="vHePkwD/KV5b/upIElu+Ef4uqv8="/>
         <field:input field="email" id="c_com_brand_sniffy_bo_core_model_Producer_email" validationMessageCode="field_invalid_email" z="Ql8lPWB/dH7eEAsyz/BHazBrSjo="/>
-        <field:select field="country" id="c_com_brand_sniffy_bo_core_model_Producer_country" itemValue="id" items="${countrys}" path="/countrys" z="Li+0WxcUwunDSMGl5RpZsUs/+7U="/>
+        <field:select field="country" id="c_com_brand_sniffy_bo_core_model_Producer_country" itemLabel="name" itemValue="id" items="${countrys}" path="/countrys" z="user-managed"/>
         <field:input field="code" id="c_com_brand_sniffy_bo_core_model_Producer_code" z="USjvNBcWRSl76gxiM75MnEVDDAI="/>
-        <field:input field="lastUpdate" id="c_com_brand_sniffy_bo_core_model_Producer_lastUpdate" z="Oc+Q3GkgHLTanvhK2JT7XQsPMs4="/>
+        <field:input field="lastUpdate" id="c_com_brand_sniffy_bo_core_model_Producer_lastUpdate" render="false" z="user-managed"/>
     </form:update>
 </div>
