@@ -5,7 +5,7 @@
     <form:create id="fc_com_brand_sniffy_bo_core_model_ComponentRating" modelAttribute="componentRating" path="/componentratings" render="${empty dependencies}" z="aDxJaMS8NztH52GXHCseYEYYn0o=">
         <field:input field="color" id="c_com_brand_sniffy_bo_core_model_ComponentRating_color" z="ZqxMV3c+3CLshUz50k5fjJjN0Qg="/>
         <field:input field="title" id="c_com_brand_sniffy_bo_core_model_ComponentRating_title" z="ngprxOPzCqdSOK504oIKBCtTYzY="/>
-        <field:input field="description" id="c_com_brand_sniffy_bo_core_model_ComponentRating_description" z="S7iILElpeK+ecu3ij8m8SCcBHvs="/>
+        <field:textarea field="description" id="c_com_brand_sniffy_bo_core_model_ComponentRating_description" z="user-managed"/>
         <field:input field="lastUpdate" id="c_com_brand_sniffy_bo_core_model_ComponentRating_lastUpdate" render="false" z="user-managed"/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_brand_sniffy_bo_core_model_ComponentRating" render="${not empty dependencies}" z="O3pGSk3Mxm2Udt4dBPN/qHNPmjY="/>
