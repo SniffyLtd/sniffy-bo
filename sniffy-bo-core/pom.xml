@@ -238,6 +238,11 @@
             <version>9.1-901-1.jdbc4</version>
         </dependency>
     
+    <dependency>
+            <groupId>com.brand.sniffy.bo.crawler</groupId>
+            <artifactId>sniffy-bo-crawler-api</artifactId>
+            <version>0.1.0.BUILD-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

@@ -204,3 +204,41 @@ exit
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-10-30 23:52:06
 exit
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-10-30 23:52:14
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-10-31 07:16:35
+module focus --moduleName sniffy-bo-crawler-api 
+dependency add --groupId org.codehaus.jackson --artifactId jackson-core-lgpl --version 1.6.4
+dependency add --groupId org.codehaus.jackson --artifactId jackson-mapper-lgpl --version 1.6.4
+dependency add --groupId org.codehaus.jackson --artifactId jackson-xc --version 1.6.4
+module focus --moduleName sniffy-bo-web 
+dependency add --groupId org.codehaus.jackson --artifactId jackson-core-lgpl --version 1.6.4
+dependency add --groupId org.codehaus.jackson --artifactId jackson-mapper-lgpl --version 1.6.4
+dependency add --groupId org.codehaus.jackson --artifactId jackson-xc --version 1.6.4
+dependency add --groupId org.springframework --artifactId spring-oxm --version ${spring.version}
+// [failed] addon install id --searchResultId json
+json all
+module focus --moduleName sniffy-bo-crawler-api 
+class --class ~.request.ProductRequest
+field string --fieldName name
+field string --fieldName description
+field string --fieldName desprice
+field string --fieldName source
+field string --fieldName category
+field string --fieldName others
+field string --fieldName components
+json add --class ~.request.ProductRequest
+exit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-10-31 19:01:14
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-10-31 19:01:18
+module focus --moduleName sniffy-bo-crawler-api 
+service --interface ~.service.ProductRequestService --entity ~.request.ProductRequest --class ~.service.impl.ProductrequestServiceImpl
+focus --class ~.request.ProductRequest
+field string producerName
+field string barcode
+module focus --moduleName sniffy-bo-core 
+focus --class ~.model.Product
+field string equivalentNames
+exit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-10-31 19:34:07
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-10-31 19:34:11
+exit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-10-31 19:35:43

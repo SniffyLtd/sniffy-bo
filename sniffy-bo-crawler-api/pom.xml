@@ -152,6 +152,7 @@
             <artifactId>sniffy-bo-core</artifactId>
             <version>0.1.0.BUILD-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
     <build>
         <plugins>

@@ -74,4 +74,25 @@
     </property>
   </bean>
 <bean class="com.brand.sniffy.bo.web.controller.ApplicationConversionServiceFactoryBean" id="applicationConversionService"/>
+
+    <bean class="com.brand.sniffy.bo.web.utils.JaxbJacksonObjectMapper" name="jaxbJacksonObjectMapper" ></bean>
+   
+    
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="order" value="1" />
+        <property name="ignoreAcceptHeader" value="true" />
+        <property name="mediaTypes">
+            <map>
+                <entry key="json" value="application/json"/>
+            </map>
+        </property>
+        
+        <property name="defaultViews">
+            <list>
+                <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+                    <property name="objectMapper" ref="jaxbJacksonObjectMapper"/>
+                </bean> 
+            </list>
+        </property>
+    </bean>
 </beans>

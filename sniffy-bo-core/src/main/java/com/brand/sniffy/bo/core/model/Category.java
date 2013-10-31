@@ -1,20 +1,16 @@
 package com.brand.sniffy.bo.core.model;
-import java.util.HashSet;
+
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.util.Set;
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Column;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
+import org.springframework.roo.addon.json.RooJson;
 import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord
+@RooJson
 public class Category {
 
     private static final String ID_FIELD = "id";
@@ -23,8 +19,6 @@ public class Category {
 
     private String name;
 
-    /**
-     */
     private long lastUpdate;
 
     public JSONObject toJson() throws JSONException {
@@ -35,7 +29,7 @@ public class Category {
     }
 
     @Override
-    public String toString(){
-    	return name;
+    public String toString() {
+        return name;
     }
 }

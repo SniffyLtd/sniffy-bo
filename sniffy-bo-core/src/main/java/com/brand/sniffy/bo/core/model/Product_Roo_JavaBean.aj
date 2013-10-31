@@ -67,4 +67,12 @@ privileged aspect Product_Roo_JavaBean {
         this.lastUpdate = lastUpdate;
     }
     
+    public String Product.getEquivalentNames() {
+        return this.equivalentNames;
+    }
+    
+    public void Product.setEquivalentNames(String equivalentNames) {
+        this.equivalentNames = equivalentNames;
+    }
+    
 }

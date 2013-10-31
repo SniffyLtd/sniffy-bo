@@ -9,4 +9,9 @@ public interface ProductService {
 	public void saveProduct(Product product);
 	
 	public Product updateProduct(Product product);
+
+	public Product findByBarcode(String barcode);
+
+	public Product findByName(String name);
+
 }

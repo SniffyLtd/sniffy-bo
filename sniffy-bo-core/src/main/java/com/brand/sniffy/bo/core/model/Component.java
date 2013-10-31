@@ -6,11 +6,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
+import org.springframework.roo.addon.json.RooJson;
 import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord
+@RooJson
 public class Component {
 
     private static final String ID_FIELD = "id";
@@ -26,14 +28,12 @@ public class Component {
     @ManyToOne
     @JoinColumn(name = "rating_id")
     private ComponentRating rating;
-    
+
     private String description;
-    
+
     private String equivalentNames;
 
-
     private long lastUpdate;
-
 
     public JSONObject toJson() throws JSONException {
         JSONObject component = new JSONObject();
@@ -43,9 +43,9 @@ public class Component {
         component.put(RATING_FIELD, rating.getId());
         return component;
     }
-    
+
     @Override
-    public String toString(){
-    	return name;
+    public String toString() {
+        return name;
     }
 }
