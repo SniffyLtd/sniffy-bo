@@ -13,4 +13,12 @@ public interface ComponentService {
 	public Component updateComponent(Component component);
 
 	public List<Component> findComponentsChangedAfter(Long lastSynchronization);
+
+	public Component findByName(String token);
+
+	public Component createTemporaryComponent(String token);
+	
+	public List<Component> findAll();
+	
+
 }

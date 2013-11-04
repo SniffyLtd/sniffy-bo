@@ -29,4 +29,9 @@ public class CategoryServiceImpl implements CategoryService {
 	public List<Category> findCategorysChangedAfter(Long lastSynchronization) {
 		return categoryRepository.findByLastUpdateGreaterThan(lastSynchronization);
 	}
+
+	@Override
+	public List<Category> findAll() {
+		return categoryRepository.findAll();
+	}
 }

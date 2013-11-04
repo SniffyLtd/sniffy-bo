@@ -6,7 +6,7 @@
         <table:table data="${componentratings}" id="l_com_brand_sniffy_bo_core_model_ComponentRating" path="/componentratings" z="ILzsWx1k8p5xOq3cWRgm/AvgOTM=">
             <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_color" property="color" z="L4Db6hMNcjB0jl8LlvZtwxmqDpk="/>
             <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_title" property="title" z="fFz7RHEMCE9mh1S/UO7xxdRXPC0="/>
-            <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_description" property="description" z="/AhtUfV/17QEDvWiT5L8b7qw6z8="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_description" property="description" render="false" z="user-managed"/>
             <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_lastUpdate" property="lastUpdate" render="false" z="user-managed"/>
         </table:table>
     </page:list>

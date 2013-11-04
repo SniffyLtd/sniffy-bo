@@ -8,6 +8,7 @@
         <field:select field="rating" id="c_com_brand_sniffy_bo_core_model_Component_rating" itemLabel="title" itemValue="id" items="${componentratings}" path="/componentratings" z="user-managed"/>
         <field:input field="lastUpdate" id="c_com_brand_sniffy_bo_core_model_Component_lastUpdate" render="false" z="user-managed"/>
         <field:textarea field="description" id="c_com_brand_sniffy_bo_core_model_Component_description" z="user-managed"/>
+        <field:checkbox field="tmp" id="c_com_brand_sniffy_bo_core_model_Component_tmp" z="cAcGagjGqyKn6LyEnHtSdsWQlAc="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_brand_sniffy_bo_core_model_Component" render="${not empty dependencies}" z="Wi6euvipi1BdZESFoSe7vBco45I="/>
 </div>

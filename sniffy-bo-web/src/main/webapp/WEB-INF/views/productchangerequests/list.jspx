@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_com_brand_sniffy_bo_core_model_ProductChangeRequest" items="${productchangerequests}" z="G5U2GwqhjyqAWqdNoHZ7Vx60kLI=">
-        <table:table data="${productchangerequests}" id="l_com_brand_sniffy_bo_core_model_ProductChangeRequest" path="/productchangerequests" z="9o5zVy9ybofTAxhu6i9qqODrxbA=">
+        <table:table create="false" data="${productchangerequests}" id="l_com_brand_sniffy_bo_core_model_ProductChangeRequest" path="/productchangerequests" z="user-managed">
             <table:column id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_product" property="product" z="QE/qY/GFDjiXOmU9GKJ3viEZDQQ="/>
             <table:column id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_name" property="name" z="P9CAlWjlmO7Wh99CCsghp2WB4C4="/>
             <table:column id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_source" property="source" z="HERpJZt6vh/SHNTL1XKXfrt+CXs="/>

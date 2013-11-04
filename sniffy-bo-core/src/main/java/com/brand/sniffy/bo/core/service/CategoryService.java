@@ -13,4 +13,6 @@ public interface CategoryService {
 	public Category updateCategory(Category category);
 
 	public List<Category> findCategorysChangedAfter(Long lastSynchronization);
+
+	public List<Category> findAll();
 }

@@ -242,3 +242,34 @@ exit
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-10-31 19:34:11
 exit
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-10-31 19:35:43
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-31 21:42:28
+module focus --moduleName sniffy-bo-crawler-api 
+class --class ~.request.ProductRequest
+field string name
+field string --fieldName description
+field string --fieldName price
+field string --fieldName components
+field string --fieldName url
+field string --fieldName producerName
+field string --fieldName barcode
+service type --interface ~.service.ProductRequestProcessor --entity ~.request.ProductRequest --class ~.service.ProductRequestProcessorImpl
+json add --class ~.request.ProductRequest
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-31 22:35:23
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-31 22:35:29
+download status
+module focus --moduleName sniffy-bo-core 
+focus --class ~.model.Component
+// [failed] field boolean --fieldName temporary
+field boolean --fieldName tmp
+service type --interface ~.service.ProductChangeRequestService --entity ~.model.ProductChangeRequest --class ~.service.ProductChangeRequestServiceImpl
+repository jpa --interface ~.repository.ProductChangeRequestRepository --entity ~.model.ProductChangeRequest
+focus --class ~.model.ProductChangeRequest 
+// [failed] field date --fieldName requestDate --type java.util.Date --dateTimeFormatPattern 'dd-MM-yyyy'
+// [failed] field date --fieldName requestDate --type java.util.Date --dateTimeFormatPattern 'dd-MM-yyyy'
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-01 11:03:44
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-01 11:03:58
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-02 12:03:05
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-02 12:03:19

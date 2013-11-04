@@ -9,6 +9,7 @@
             <table:column id="c_com_brand_sniffy_bo_core_model_Component_rating" property="rating" render="false" z="user-managed"/>
             <table:column id="c_com_brand_sniffy_bo_core_model_Component_lastUpdate" property="lastUpdate" render="false" z="user-managed"/>
             <table:column id="c_com_brand_sniffy_bo_core_model_Component_description" property="description" z="Z9L3L/9okaZ2MthJARVD5oudmlU="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Component_tmp" property="tmp" z="qjwVbyUGkLarrGrLKpNGRtGSAq0="/>
         </table:table>
     </page:list>
 </div>

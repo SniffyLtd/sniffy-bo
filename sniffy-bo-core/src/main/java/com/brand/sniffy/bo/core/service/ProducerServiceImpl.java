@@ -1,6 +1,7 @@
 package com.brand.sniffy.bo.core.service;
 
 import java.util.Date;
+import java.util.List;
 
 import com.brand.sniffy.bo.core.model.Producer;
 import com.brand.sniffy.bo.core.repository.ProducerRepository;
@@ -22,5 +23,10 @@ public class ProducerServiceImpl implements ProducerService {
 	public Producer updateProducer(Producer producer) {
 		producer.setLastUpdate(new Date().getTime());
 		return producerRepository.save(producer);
+	}
+
+	@Override
+	public List<Producer> findAll() {
+		return producerRepository.findAll();
 	}
 }

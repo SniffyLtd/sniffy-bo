@@ -48,4 +48,12 @@ privileged aspect Component_Roo_JavaBean {
         this.lastUpdate = lastUpdate;
     }
     
+    public Boolean Component.getTmp() {
+        return this.tmp;
+    }
+    
+    public void Component.setTmp(Boolean tmp) {
+        this.tmp = tmp;
+    }
+    
 }

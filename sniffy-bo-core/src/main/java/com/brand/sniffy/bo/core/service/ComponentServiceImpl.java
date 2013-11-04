@@ -30,4 +30,31 @@ public class ComponentServiceImpl implements ComponentService {
 	public List<Component> findComponentsChangedAfter(Long lastSynchronization) {
 		return componentRepository.findByLastUpdateGreaterThan(lastSynchronization);
 	}
+
+	@Override
+	public Component findByName(String token) {
+		Component component = componentRepository.findByName(token);
+		if(component != null){
+			List<Component> result = componentRepository.findByEquivalentNamesLike(token);
+			if(result.size() > 0){
+				component = result.get(0);
+			}
+		}
+		return component;
+	}
+
+	@Override
+	public Component createTemporaryComponent(String token) {
+		Component component = new Component();
+		component.setName(token);
+		component.setTmp(true);
+		saveComponent(component);
+		
+		return component;
+	}
+
+	@Override
+	public List<Component> findAll() {
+		return componentRepository.findAll();
+	}
 }

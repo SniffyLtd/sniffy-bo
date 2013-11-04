@@ -58,7 +58,6 @@
     <div id="_${fn:escapeXml(id)}_id">
       <label for="_${sec_field}_id"  class="control-label" >
         <c:out value="${fn:escapeXml(label)}" />
-        
       </label>
        <div class="controls">
       <c:choose>

@@ -17,7 +17,7 @@
     </c:if>
 
     <c:if test="${empty dateTimePattern}">
-      <c:set value="MM/dd/yyyy" var="dateTimePattern" />
+      <c:set value="dd-MM-yyyy" var="dateTimePattern" />
     </c:if>
 
     <div id="_${fn:escapeXml(id)}_id">
@@ -25,6 +25,7 @@
         <c:out value="${label}" />
       </label>
       <div class="controls" id="_${fn:escapeXml(id)}_${fn:escapeXml(field)}_id">
+      <pre>
         <c:choose>
           <c:when test="${date}">
             <spring:escapeBody>
@@ -40,7 +41,7 @@
             <spring:eval expression="object[field]" />
           </c:otherwise>
         </c:choose>
-        
+        </pre>
       </div>
     </div>
     <br />

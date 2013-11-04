@@ -67,7 +67,9 @@
             <c:set var="columnMaxLength" value="${lengths[num.count-1]}" />
             <c:set var="columnType" value="${types[num.count-1]}" />
             <c:set var="columnDatePattern" value="${patterns[num.count-1]}" />
-            <td>
+            <c:set var="itemId"><spring:eval expression="item[typeIdFieldName]"/></c:set>
+            <spring:url value="${path}/${itemId}" var="show_form_url" />
+            <td onclick="location.href='${show_form_url}'">
               <c:choose>
                 <c:when test="${columnType eq 'date'}">
                   <spring:escapeBody>
@@ -91,15 +93,15 @@
               <c:out value="${colTxt}" />
             </td>
           </c:forTokens>
-          <c:set var="itemId"><spring:eval expression="item[typeIdFieldName]"/></c:set>
-          <td class="utilbox">
-            <spring:url value="${path}/${itemId}" var="show_form_url" />
+          
+          <!-- td class="utilbox">
+            
             <spring:url value="/resources/bootstrap/img/glyphicons-halflings.png" var="show_image_url" />
             <spring:message arguments="${typeName}" code="entity_show" var="show_label" htmlEscape="false" />
             <a href="${show_form_url}" alt="${fn:escapeXml(show_label)}" title="${fn:escapeXml(show_label)}">
               <img alt="${fn:escapeXml(show_label)}" class="icon-search" src="${show_image_url}" title="${fn:escapeXml(show_label)}" />
             </a>
-          </td>
+          </td-->
           <c:if test="${update}">
             <td class="utilbox">
               <spring:url value="${path}/${itemId}" var="update_form_url">
@@ -142,11 +144,11 @@
               <spring:url value="${path}" var="create_url">
                 <spring:param name="form" />
               </spring:url>
-              <a href="${create_url}">
-                <spring:url value="/resources/bootstrap/img/glyphicons-halflings.png" var="create_img_url" />
-                <spring:message arguments="${typeName}" code="global_menu_new" var="add_message" htmlEscape="false" />
-                <img alt="${fn:escapeXml(add_message)}" src="${create_img_url}" class="icon-plus-sign" title="${fn:escapeXml(add_message)}" />
-              </a>
+              <spring:message arguments="${typeName}" code="global_menu_new" var="add_message" htmlEscape="false" />
+              <button class="btn" onclick="location.href='${create_url}'" alt="${fn:escapeXml(add_message)}">
+                
+                <span  alt="${fn:escapeXml(add_message)}" class="icon-plus-sign" />
+              </button>
             </span>
             <c:out value=" " />
           </c:if>

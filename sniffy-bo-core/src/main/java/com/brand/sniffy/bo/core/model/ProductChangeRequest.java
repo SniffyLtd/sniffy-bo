@@ -33,7 +33,7 @@ public class ProductChangeRequest {
     private BigDecimal price;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
+    @DateTimeFormat(pattern="dd-MM-yyyy")
     private Date requestDate;
 
     private String description;

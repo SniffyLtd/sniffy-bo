@@ -10,4 +10,8 @@ import org.springframework.roo.addon.layers.repository.jpa.RooJpaRepository;
 public interface ComponentRepository {
 
 	List<Component> findByLastUpdateGreaterThan(Long lastSynchronization);
+
+	Component findByName(String token);
+
+	List<Component> findByEquivalentNamesLike(String token);
 }

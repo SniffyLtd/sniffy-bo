@@ -15,6 +15,7 @@ import com.brand.sniffy.bo.core.service.ComponentRatingService;
 import com.brand.sniffy.bo.core.service.ComponentService;
 import com.brand.sniffy.bo.core.service.CountryService;
 import com.brand.sniffy.bo.core.service.ProducerService;
+import com.brand.sniffy.bo.core.service.ProductChangeRequestService;
 import com.brand.sniffy.bo.core.service.ProductService;
 import com.brand.sniffy.bo.web.controller.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     @Autowired
     ProductService ApplicationConversionServiceFactoryBean.productService;
+    
+    @Autowired
+    ProductChangeRequestService ApplicationConversionServiceFactoryBean.productChangeRequestService;
     
     public Converter<Category, String> ApplicationConversionServiceFactoryBean.getCategoryToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.brand.sniffy.bo.core.model.Category, java.lang.String>() {
@@ -199,7 +203,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Long, ProductChangeRequest> ApplicationConversionServiceFactoryBean.getIdToProductChangeRequestConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.brand.sniffy.bo.core.model.ProductChangeRequest>() {
             public com.brand.sniffy.bo.core.model.ProductChangeRequest convert(java.lang.Long id) {
-                return ProductChangeRequest.findProductChangeRequest(id);
+                return productChangeRequestService.findProductChangeRequest(id);
             }
         };
     }

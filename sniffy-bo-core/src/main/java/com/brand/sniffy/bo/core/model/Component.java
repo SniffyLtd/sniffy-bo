@@ -1,5 +1,4 @@
 package com.brand.sniffy.bo.core.model;
-
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import org.json.JSONException;
@@ -48,4 +47,8 @@ public class Component {
     public String toString() {
         return name;
     }
+
+    /**
+     */
+    private Boolean tmp;
 }
