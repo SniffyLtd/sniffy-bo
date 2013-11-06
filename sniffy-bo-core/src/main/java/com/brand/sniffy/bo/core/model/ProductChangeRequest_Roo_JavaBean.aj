@@ -3,6 +3,7 @@
 
 package com.brand.sniffy.bo.core.model;
 
+import com.brand.sniffy.bo.core.model.Category;
 import com.brand.sniffy.bo.core.model.Component;
 import com.brand.sniffy.bo.core.model.Producer;
 import com.brand.sniffy.bo.core.model.Product;
@@ -83,6 +84,14 @@ privileged aspect ProductChangeRequest_Roo_JavaBean {
     
     public void ProductChangeRequest.setBarcode(String barcode) {
         this.barcode = barcode;
+    }
+    
+    public Category ProductChangeRequest.getCategory() {
+        return this.category;
+    }
+    
+    public void ProductChangeRequest.setCategory(Category category) {
+        this.category = category;
     }
     
 }

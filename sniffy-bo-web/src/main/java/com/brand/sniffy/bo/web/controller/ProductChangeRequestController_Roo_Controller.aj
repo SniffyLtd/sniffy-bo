@@ -73,6 +73,7 @@ privileged aspect ProductChangeRequestController_Roo_Controller {
     void ProductChangeRequestController.populateEditForm(Model uiModel, ProductChangeRequest productChangeRequest) {
         uiModel.addAttribute("productChangeRequest", productChangeRequest);
         addDateTimeFormatPatterns(uiModel);
+        uiModel.addAttribute("categorys", categoryService.findAllCategorys());
         uiModel.addAttribute("components", componentService.findAllComponents());
         uiModel.addAttribute("producers", producerService.findAllProducers());
         uiModel.addAttribute("products", productService.findAllProducts());

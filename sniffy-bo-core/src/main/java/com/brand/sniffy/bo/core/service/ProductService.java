@@ -14,4 +14,6 @@ public interface ProductService {
 
 	public Product findByName(String name);
 
+	public Product findOne(long id);
+
 }
