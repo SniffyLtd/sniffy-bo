@@ -4,6 +4,8 @@
 package com.brand.sniffy.bo.core.model;
 
 import com.brand.sniffy.bo.core.model.Country;
+import com.brand.sniffy.bo.core.model.Producer;
+import java.util.Set;
 
 privileged aspect Country_Roo_JavaBean {
     
@@ -21,6 +23,14 @@ privileged aspect Country_Roo_JavaBean {
     
     public void Country.setLastUpdate(long lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+    
+    public Set<Producer> Country.getProducers() {
+        return this.producers;
+    }
+    
+    public void Country.setProducers(Set<Producer> producers) {
+        this.producers = producers;
     }
     
     public String Country.getName() {

@@ -5,6 +5,7 @@ package com.brand.sniffy.bo.web.controller;
 
 import com.brand.sniffy.bo.core.model.Country;
 import com.brand.sniffy.bo.core.service.CountryService;
+import com.brand.sniffy.bo.core.service.ProducerService;
 import com.brand.sniffy.bo.web.controller.CountryController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +24,9 @@ privileged aspect CountryController_Roo_Controller {
     
     @Autowired
     CountryService CountryController.countryService;
+    
+    @Autowired
+    ProducerService CountryController.producerService;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String CountryController.create(@Valid Country country, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -91,6 +95,7 @@ privileged aspect CountryController_Roo_Controller {
     
     void CountryController.populateEditForm(Model uiModel, Country country) {
         uiModel.addAttribute("country", country);
+        uiModel.addAttribute("producers", producerService.findAllProducers());
     }
     
     String CountryController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

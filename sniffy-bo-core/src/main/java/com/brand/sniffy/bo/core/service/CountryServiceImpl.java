@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.brand.sniffy.bo.core.model.Country;
+import com.brand.sniffy.bo.core.model.Producer;
 import com.brand.sniffy.bo.core.repository.CountryRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ public class CountryServiceImpl implements CountryService {
 
 	@Autowired
 	private CountryRepository countryRepository;
+	
+	@Autowired
+	private ProducerService producerService;
 	
 	@Override
 	public void saveCountry(Country country) {
@@ -28,5 +32,15 @@ public class CountryServiceImpl implements CountryService {
 	@Override
 	public List<Country> findCountrysChangedAfter(Long lastSynchronization) {
 		return countryRepository.findByLastUpdateGreaterThan(lastSynchronization);
+	}
+
+	@Override
+	public void deleteCountry(Country country) {
+		for(Producer producer: country.getProducers()){
+			producer.setCountry(null);
+			producerService.saveProducer(producer);
+		}
+		
+		countryRepository.delete(country);
 	}
 }

@@ -94,4 +94,12 @@ privileged aspect ProductChangeRequest_Roo_JavaBean {
         this.category = category;
     }
     
+    public Status ProductChangeRequest.getStatus() {
+        return this.status;
+    }
+    
+    public void ProductChangeRequest.setStatus(Status status) {
+        this.status = status;
+    }
+    
 }

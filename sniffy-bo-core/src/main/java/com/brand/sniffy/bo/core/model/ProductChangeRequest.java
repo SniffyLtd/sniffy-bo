@@ -9,6 +9,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Enumerated; 
+import javax.persistence.EnumType;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
@@ -20,6 +22,10 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 @RooJson
 public class ProductChangeRequest {
+	
+	public enum Status{
+		toResolve, resolved, discarded
+	}
 
     @ManyToOne
     @JoinColumn(name = "product_id")
@@ -51,4 +57,7 @@ public class ProductChangeRequest {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+    
+    @Enumerated(EnumType.STRING)
+    private Status status;
 }

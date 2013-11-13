@@ -13,4 +13,6 @@ public interface CountryService {
 	public Country updCountry(Country country);
 
 	public List<Country> findCountrysChangedAfter(Long lastSynchronization);
+	
+	public void deleteCountry(Country country);
 }

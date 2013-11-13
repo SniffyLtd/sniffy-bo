@@ -283,3 +283,6 @@ exit
 module focus --moduleName sniffy-bo-core 
 focus --class ~.model.ProductChangeRequest
 field reference --type ~.model.Category --fieldName category --cardinality MANY_TO_ONE --joinColumnName category_id
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-06 08:22:49
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-06 20:57:52

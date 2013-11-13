@@ -1,6 +1,12 @@
 package com.brand.sniffy.bo.core.model;
 
+import java.util.Set;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+
 import javax.persistence.Column;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -23,6 +29,9 @@ public class Country {
     private String code;
 
     private long lastUpdate;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="country",orphanRemoval=true, fetch = FetchType.LAZY)
+    private Set<Producer> producers;
 
     @Column(unique = true)
     private String name;

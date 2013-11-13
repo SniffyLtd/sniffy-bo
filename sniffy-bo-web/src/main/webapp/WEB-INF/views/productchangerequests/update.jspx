@@ -13,5 +13,6 @@
         <field:select field="producer" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_producer" itemLabel="name" itemValue="id" items="${producers}" path="/producers" z="user-managed"/>
         <field:input field="source" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_source" z="YsfKRZw3woNwAzutymDB/MjrwWo="/>
         <field:select field="category" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_category" itemValue="id" items="${categorys}" path="/categorys" z="3k5z4Ri+AEX0r99NvkyIsaLOFMw="/>
+        <field:input field="status" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_status" z="WizGtEDNUrXgQM3ybJwcCXv3XVc="/>
     </form:update>
 </div>

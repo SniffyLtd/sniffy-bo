@@ -3,7 +3,9 @@
 
 package com.brand.sniffy.bo.core.model;
 
+import com.brand.sniffy.bo.core.model.Component;
 import com.brand.sniffy.bo.core.model.ComponentRating;
+import java.util.Set;
 
 privileged aspect ComponentRating_Roo_JavaBean {
     
@@ -37,6 +39,14 @@ privileged aspect ComponentRating_Roo_JavaBean {
     
     public void ComponentRating.setLastUpdate(long lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+    
+    public Set<Component> ComponentRating.getComponents() {
+        return this.components;
+    }
+    
+    public void ComponentRating.setComponents(Set<Component> components) {
+        this.components = components;
     }
     
 }

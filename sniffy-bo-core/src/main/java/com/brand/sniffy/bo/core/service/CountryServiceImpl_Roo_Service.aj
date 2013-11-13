@@ -19,10 +19,6 @@ privileged aspect CountryServiceImpl_Roo_Service {
         return countryRepository.count();
     }
     
-    public void CountryServiceImpl.deleteCountry(Country country) {
-        countryRepository.delete(country);
-    }
-    
     public Country CountryServiceImpl.findCountry(Long id) {
         return countryRepository.findOne(id);
     }

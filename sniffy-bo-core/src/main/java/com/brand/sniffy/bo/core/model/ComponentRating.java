@@ -1,5 +1,9 @@
 package com.brand.sniffy.bo.core.model;
 
+import java.util.Set;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -28,6 +32,9 @@ public class ComponentRating {
     private String description;
 
     private long lastUpdate;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="rating", fetch = FetchType.LAZY)
+    private Set<Component> components;
 
     public JSONObject toJson() throws JSONException {
         JSONObject rating = new JSONObject();

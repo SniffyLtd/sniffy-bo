@@ -10,7 +10,6 @@ import java.util.List;
 privileged aspect CountryService_Roo_Service {
     
     public abstract long CountryService.countAllCountrys();    
-    public abstract void CountryService.deleteCountry(Country country);    
     public abstract Country CountryService.findCountry(Long id);    
     public abstract List<Country> CountryService.findAllCountrys();    
     public abstract List<Country> CountryService.findCountryEntries(int firstResult, int maxResults);    

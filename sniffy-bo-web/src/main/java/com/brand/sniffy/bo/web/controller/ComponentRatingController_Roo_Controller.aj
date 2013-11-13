@@ -5,6 +5,7 @@ package com.brand.sniffy.bo.web.controller;
 
 import com.brand.sniffy.bo.core.model.ComponentRating;
 import com.brand.sniffy.bo.core.service.ComponentRatingService;
+import com.brand.sniffy.bo.core.service.ComponentService;
 import com.brand.sniffy.bo.web.controller.ComponentRatingController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +24,9 @@ privileged aspect ComponentRatingController_Roo_Controller {
     
     @Autowired
     ComponentRatingService ComponentRatingController.componentRatingService;
+    
+    @Autowired
+    ComponentService ComponentRatingController.componentService;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String ComponentRatingController.create(@Valid ComponentRating componentRating, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -91,6 +95,7 @@ privileged aspect ComponentRatingController_Roo_Controller {
     
     void ComponentRatingController.populateEditForm(Model uiModel, ComponentRating componentRating) {
         uiModel.addAttribute("componentRating", componentRating);
+        uiModel.addAttribute("components", componentService.findAllComponents());
     }
     
     String ComponentRatingController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
