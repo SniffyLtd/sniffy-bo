@@ -7,9 +7,9 @@
             <table:column id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_product" property="product" z="QE/qY/GFDjiXOmU9GKJ3viEZDQQ="/>
             <table:column id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_name" property="name" z="P9CAlWjlmO7Wh99CCsghp2WB4C4="/>
             <table:column id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_source" property="source" z="HERpJZt6vh/SHNTL1XKXfrt+CXs="/>
-            <table:column id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_price" property="price" z="cbcpX74nhx4mnCodHdADsr6or2E="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_price" property="price" render="false" z="user-managed"/>
             <table:column date="true" dateTimePattern="${productChangeRequest_requestdate_date_format}" id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_requestDate" property="requestDate" z="zMEdLPRQEw+iXz/iyoTl8/SiTiA="/>
-            <table:column id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_description" property="description" z="Xjy/MiY4W7RplA/eQSLyqkz4nw0="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_ProductChangeRequest_description" property="description" render="false" z="user-managed"/>
         </table:table>
     </page:list>
 </div>

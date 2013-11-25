@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_brand_sniffy_bo_core_model_User" object="${user}" path="/users" z="e18kIeoqF2MFJQJHUUI+e6keVIs=">
+        <field:display field="firstname" id="s_com_brand_sniffy_bo_core_model_User_firstname" object="${user}" z="cgbT1/Dh3zC76GDJYjC02UcVMq8="/>
+        <field:display field="lastname" id="s_com_brand_sniffy_bo_core_model_User_lastname" object="${user}" z="q5FHJZK+IyZQvTCovovqQxjATrQ="/>
+        <field:display field="email" id="s_com_brand_sniffy_bo_core_model_User_email" object="${user}" z="0RqqRDe6hf4M2+cl4eFJ4srIOwg="/>
+        <field:display field="roles" id="s_com_brand_sniffy_bo_core_model_User_roles" object="${user}" z="v7c0WwPs2h3PfM6FBejXkIsgJGk="/>
+        <field:display field="password" id="s_com_brand_sniffy_bo_core_model_User_password" object="${user}" z="EVRrZ5UYDtpzf/PlixrRGeaFnL4="/>
+        <field:display field="apiKey" id="s_com_brand_sniffy_bo_core_model_User_apiKey" object="${user}" z="u2FeKS1DYDdRbrgjw9WnjAnpgEg="/>
+        <field:display field="devices" id="s_com_brand_sniffy_bo_core_model_User_devices" object="${user}" z="fCCJPfkS6sKq87GQov6edTtweRA="/>
+    </page:show>
+</div>

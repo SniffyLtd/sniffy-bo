@@ -1,4 +1,5 @@
 package com.brand.sniffy.bo.core.model;
+import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import org.json.JSONException;
@@ -28,6 +29,7 @@ public class Component {
     @JoinColumn(name = "rating_id")
     private ComponentRating rating;
 
+    @Column(length=1024)
     private String description;
 
     private String equivalentNames;

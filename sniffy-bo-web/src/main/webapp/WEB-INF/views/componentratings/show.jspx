@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_com_brand_sniffy_bo_core_model_ComponentRating" object="${componentrating}" path="/componentratings" z="yU1B2Zoz+KM0pJStXb7Qh7oMwIA=">
-        <field:display field="color" id="s_com_brand_sniffy_bo_core_model_ComponentRating_color" object="${componentrating}" z="x2UPYM1H+coDB/bKKri5k29mudA="/>
+        <field:display color="true" field="color" id="s_com_brand_sniffy_bo_core_model_ComponentRating_color" object="${componentrating}" z="user-managed"/>
         <field:display field="title" id="s_com_brand_sniffy_bo_core_model_ComponentRating_title" object="${componentrating}" z="YD+byvn0xALjcpFpOq7CcuvFelA="/>
         <field:display field="description" id="s_com_brand_sniffy_bo_core_model_ComponentRating_description" object="${componentrating}" z="8c5CG4ongGcBCHeEo5CM3bjnZ3Q="/>
         <field:display field="lastUpdate" id="s_com_brand_sniffy_bo_core_model_ComponentRating_lastUpdate" object="${componentrating}" render="false" z="user-managed"/>

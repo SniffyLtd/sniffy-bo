@@ -43,7 +43,7 @@
     <util:panel id="${id}" title="${title_msg}" openPane="${openPane}">
       <c:choose>
         <c:when test="${not empty object}">
-        <div class="btn-group">
+        <div class="btn-group ">
 		  <c:if test="${create}">
                 <spring:url value="${path}" var="create_form_url">
                   <spring:param name="form" />

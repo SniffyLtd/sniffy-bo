@@ -286,3 +286,36 @@ field reference --type ~.model.Category --fieldName category --cardinality MANY_
 exit
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-06 08:22:49
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-06 20:57:52
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-22 17:41:06
+module focus --moduleName sniffy-bo-core 
+entity jpa --class ~.model.SearchRequest
+field string --fieldName barcode --notNull yes 
+// [failed] field date --fieldName date --notNull yes --type java.util.Date
+field date --fieldName requestDate --notNull yes --type java.util.Date
+// [failed] entity jpa --class ~.model.User
+// [failed] entity jpa --class ~.model.User --table users
+entity jpa --class ~.model.User --table users --permitReservedWords yes
+field string --fieldName firstname
+field string --fieldName lastname
+field string --fieldName email --regexp '^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*'
+// [failed] field string --fieldName email --regexp ^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$
+field string --fieldName email --regexp ^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$ 
+enum type --class ~.utils.UserRole 
+focus --class ~.model.User
+// [failed] field enum --fieldName role --type ~.utils.UserRole --notNull true
+field list --type ~.utils.UserRole --fieldName roles 
+field string --fieldName password 
+field string --fieldName apiKey --notNull 
+// [failed] field list --fieldName devices --type java.lang.String
+// [failed] field list --fieldName devices --type string
+// [failed] field list --fieldName devices --type String
+// [failed] field list --fieldName devices --type java.lang.String
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-22 23:14:16
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-22 23:14:27
+module focus --moduleName sniffy-bo-web 
+web mvc scaffold --class ~.controller.UserController --backingType sniffy-bo-core|~.model.User
+module focus --moduleName sniffy-bo-core 
+service type --interface ~.service.UserService --entity ~.model.User 
+repository jpa --interface ~.repository.UserRepository --entity ~.model.User
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-25 23:16:31

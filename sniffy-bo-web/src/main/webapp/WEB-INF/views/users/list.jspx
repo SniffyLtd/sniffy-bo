@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_brand_sniffy_bo_core_model_User" items="${users}" z="9mUDsVKXYU50tBzr+X480Cpd42U=">
+        <table:table data="${users}" id="l_com_brand_sniffy_bo_core_model_User" path="/users" z="UXTCO1fMkH9fzqUNscsUyIf4F/Q=">
+            <table:column id="c_com_brand_sniffy_bo_core_model_User_firstname" property="firstname" z="6PcuNhM3WhhHHhLl9FatA1oCqOY="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_User_lastname" property="lastname" z="I7mdzDWyd1db/uJ9WMThnVFtnRo="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_User_email" property="email" z="apVInO0s5TQs2NQV6kPOy7Jboi8="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_User_roles" property="roles" z="TuJLEDFD2VowmCLiekN9uMybv6U="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_User_password" property="password" z="3pdgTuneEDKdDpsnhxSGH16VUKY="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_User_apiKey" property="apiKey" z="4XB0KD9viL+7FF3mD3UoOHcoJb4="/>
+        </table:table>
+    </page:list>
+</div>

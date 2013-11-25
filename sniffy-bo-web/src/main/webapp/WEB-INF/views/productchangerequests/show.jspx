@@ -2,7 +2,7 @@
 <div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:show create="false" delete="false" id="ps_com_brand_sniffy_bo_core_model_ProductChangeRequest" object="${productchangerequest}" path="/productchangerequests" z="9MIjaIQZ51dNgSILWJ3mM4ahMJc=">
+    <page:show create="false" delete="false" id="ps_com_brand_sniffy_bo_core_model_ProductChangeRequest" object="${productchangerequest}" path="/productchangerequests" z="user-managed">
         <spring:url value="/products/request/${productchangerequest.id}" var="new_form_url"/>
         <spring:url value="/products/request/merge" var="merge_request_url"/>
         <div class="btn-group">

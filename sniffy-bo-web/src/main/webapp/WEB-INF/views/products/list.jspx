@@ -6,10 +6,10 @@
         <table:table data="${products}" id="l_com_brand_sniffy_bo_core_model_Product" path="/products" z="yND87EDLAdIjbfUI5hDH3phdjIs=">
             <table:column id="c_com_brand_sniffy_bo_core_model_Product_barcode" property="barcode" z="gkEP2rSeUpaNFxdVnleA10+AbQY="/>
             <table:column id="c_com_brand_sniffy_bo_core_model_Product_name" property="name" z="6UTpFSSIMTv+qjE6nrqEXx2w2cs="/>
-            <table:column id="c_com_brand_sniffy_bo_core_model_Product_description" property="description" z="K/Ni75+hAJB9kEUwLidWqNKdVH8="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Product_description" property="description" render="false" z="user-managed"/>
             <table:column id="c_com_brand_sniffy_bo_core_model_Product_category" property="category" z="fTQhnJmdjVXn+smOuz0+HoTP85k="/>
-            <table:column id="c_com_brand_sniffy_bo_core_model_Product_components" property="components" z="bxDKRjn0uNQ2bz/OlyvNM1j73Bk="/>
-            <table:column id="c_com_brand_sniffy_bo_core_model_Product_producer" property="producer" z="lSuHT+AP3Ecq+KoN+bTwRJBelBw="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Product_components" property="components" render="false" z="user-managed"/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Product_producer" property="producer" render="false" z="user-managed"/>
         </table:table>
     </page:list>
 </div>

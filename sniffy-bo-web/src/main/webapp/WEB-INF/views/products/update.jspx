@@ -5,7 +5,7 @@
     <form:update id="fu_com_brand_sniffy_bo_core_model_Product" modelAttribute="product" path="/products" versionField="Version" z="2E/+r/Q53qGoOkph+RkXoVb+hEY=">
         <field:input field="barcode" id="c_com_brand_sniffy_bo_core_model_Product_barcode" z="35DmlfZt8rbCAwkVYq9zSzE/IyY="/>
         <field:input field="name" id="c_com_brand_sniffy_bo_core_model_Product_name" z="/XzakG6CplCsGu0niJwdafYOYkU="/>
-        <field:textarea field="description" id="c_com_brand_sniffy_bo_core_model_Product_description" z="user-managed"/>
+        <field:editor field="description" id="c_com_brand_sniffy_bo_core_model_Product_description" z="user-managed"/>
         <field:select field="category" id="c_com_brand_sniffy_bo_core_model_Product_category" itemLabel="name" itemValue="id" items="${categorys}" path="/categorys" z="user-managed"/>
         <field:select field="components" id="c_com_brand_sniffy_bo_core_model_Product_components" itemLabel="name" itemValue="id" items="${components}" multiple="true" path="/components" z="user-managed"/>
         <field:select field="producer" id="c_com_brand_sniffy_bo_core_model_Product_producer" itemLabel="name" itemValue="id" items="${producers}" path="/producers" z="user-managed"/>

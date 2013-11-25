@@ -10,6 +10,7 @@ import com.brand.sniffy.bo.core.model.Country;
 import com.brand.sniffy.bo.core.model.Producer;
 import com.brand.sniffy.bo.core.model.Product;
 import com.brand.sniffy.bo.core.model.ProductChangeRequest;
+import com.brand.sniffy.bo.core.model.User;
 import com.brand.sniffy.bo.core.service.CategoryService;
 import com.brand.sniffy.bo.core.service.ComponentRatingService;
 import com.brand.sniffy.bo.core.service.ComponentService;
@@ -17,6 +18,7 @@ import com.brand.sniffy.bo.core.service.CountryService;
 import com.brand.sniffy.bo.core.service.ProducerService;
 import com.brand.sniffy.bo.core.service.ProductChangeRequestService;
 import com.brand.sniffy.bo.core.service.ProductService;
+import com.brand.sniffy.bo.core.service.UserService;
 import com.brand.sniffy.bo.web.controller.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -47,6 +49,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     @Autowired
     ProductChangeRequestService ApplicationConversionServiceFactoryBean.productChangeRequestService;
+    
+    @Autowired
+    UserService ApplicationConversionServiceFactoryBean.userService;
     
     public Converter<Category, String> ApplicationConversionServiceFactoryBean.getCategoryToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.brand.sniffy.bo.core.model.Category, java.lang.String>() {
@@ -216,6 +221,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<User, String> ApplicationConversionServiceFactoryBean.getUserToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.brand.sniffy.bo.core.model.User, java.lang.String>() {
+            public String convert(User user) {
+                return new StringBuilder().append(user.getFirstname()).append(' ').append(user.getLastname()).append(' ').append(user.getEmail()).append(' ').append(user.getPassword()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, User> ApplicationConversionServiceFactoryBean.getIdToUserConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.brand.sniffy.bo.core.model.User>() {
+            public com.brand.sniffy.bo.core.model.User convert(java.lang.Long id) {
+                return userService.findUser(id);
+            }
+        };
+    }
+    
+    public Converter<String, User> ApplicationConversionServiceFactoryBean.getStringToUserConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.brand.sniffy.bo.core.model.User>() {
+            public com.brand.sniffy.bo.core.model.User convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), User.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getCategoryToStringConverter());
         registry.addConverter(getIdToCategoryConverter());
@@ -238,6 +267,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getProductChangeRequestToStringConverter());
         registry.addConverter(getIdToProductChangeRequestConverter());
         registry.addConverter(getStringToProductChangeRequestConverter());
+        registry.addConverter(getUserToStringConverter());
+        registry.addConverter(getIdToUserConverter());
+        registry.addConverter(getStringToUserConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

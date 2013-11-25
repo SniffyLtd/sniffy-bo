@@ -30,5 +30,9 @@
         <menu:category id="c_productchangerequest" z="R/TOo61vPFmPd3lu7tgtJLGbQyQ=">
             <menu:item id="i_productchangerequest_list" messageCode="global_menu_list" url="/productchangerequests?page=1&amp;size=${empty param.size ? 10 : param.size}" z="PkMXaIq72ZpTN4SuicuwPKR5ZHg="/>
         </menu:category>
+        <menu:category id="c_user" z="uoTSf/uIZ821ZppidzS9aO776yk=">
+            <menu:item id="i_user_new" messageCode="global_menu_new" url="/users?form" z="Zv1m8u2rG+JFKcvJ+AHVVK0ey24="/>
+            <menu:item id="i_user_list" messageCode="global_menu_list" url="/users?page=1&amp;size=${empty param.size ? 10 : param.size}" z="4MY4uybxa60Q1G2rlI5bOwg+sm0="/>
+        </menu:category>
     </menu:menu>
 </div>
