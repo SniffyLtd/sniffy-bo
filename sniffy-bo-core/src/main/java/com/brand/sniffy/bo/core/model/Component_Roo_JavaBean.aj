@@ -48,6 +48,22 @@ privileged aspect Component_Roo_JavaBean {
         this.lastUpdate = lastUpdate;
     }
     
+    public long Component.getCreationTime() {
+        return this.creationTime;
+    }
+    
+    public void Component.setCreationTime(long creationTime) {
+        this.creationTime = creationTime;
+    }
+    
+    public Boolean Component.getDeleted() {
+        return this.deleted;
+    }
+    
+    public void Component.setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+    
     public Boolean Component.getTmp() {
         return this.tmp;
     }

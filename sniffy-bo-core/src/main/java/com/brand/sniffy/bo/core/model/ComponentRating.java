@@ -14,7 +14,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord
-@RooJson
+@RooJson(deepSerialize=false)
 public class ComponentRating {
 
     private static final String COLOR_FIELD = "color";
@@ -32,6 +32,10 @@ public class ComponentRating {
     private String description;
 
     private long lastUpdate;
+    
+    private long creationTime;
+    
+    private Boolean deleted;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy="rating", fetch = FetchType.LAZY)
     private Set<Component> components;

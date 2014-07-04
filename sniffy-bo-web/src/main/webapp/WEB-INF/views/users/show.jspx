@@ -8,7 +8,7 @@
         <field:display field="email" id="s_com_brand_sniffy_bo_core_model_User_email" object="${user}" z="0RqqRDe6hf4M2+cl4eFJ4srIOwg="/>
         <field:display field="roles" id="s_com_brand_sniffy_bo_core_model_User_roles" object="${user}" z="v7c0WwPs2h3PfM6FBejXkIsgJGk="/>
         <field:display field="password" id="s_com_brand_sniffy_bo_core_model_User_password" object="${user}" z="EVRrZ5UYDtpzf/PlixrRGeaFnL4="/>
-        <field:display field="apiKey" id="s_com_brand_sniffy_bo_core_model_User_apiKey" object="${user}" z="u2FeKS1DYDdRbrgjw9WnjAnpgEg="/>
         <field:display field="devices" id="s_com_brand_sniffy_bo_core_model_User_devices" object="${user}" z="fCCJPfkS6sKq87GQov6edTtweRA="/>
+        <field:display field="login" id="s_com_brand_sniffy_bo_core_model_User_login" object="${user}" z="Zyoy6ng5sE3ZU+FzxJb2Jh1k65E="/>
     </page:show>
 </div>

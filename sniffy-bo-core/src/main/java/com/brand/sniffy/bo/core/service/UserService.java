@@ -8,7 +8,9 @@ public interface UserService {
 
 	User findUserByEmail(String email);
 
-	User createUser(String device);
+	User findUserByLogin(String login);
 
-	User findUserByDevice(String string);
+	User save(User user);
+
+	User registerMobileUser(User user) throws IllegalAccessException;
 }

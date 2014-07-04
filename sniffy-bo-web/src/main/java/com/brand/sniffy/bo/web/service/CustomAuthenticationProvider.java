@@ -13,25 +13,25 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import com.brand.sniffy.bo.core.model.User;
+import com.brand.sniffy.bo.core.service.AuthenticationService;
 import com.brand.sniffy.bo.core.service.UserService;
 import com.brand.sniffy.bo.core.utils.UserRole;
 
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
 	@Autowired
-	private UserService userService;
+	private AuthenticationService authenticationService;
 	
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 	    String email = authentication.getName();
 	    String password = (String)authentication.getCredentials();
-	    
-	    User user = userService.findUserByEmail(email);
-	    if(user == null){
-	    	 throw new BadCredentialsException("User not found.");
+	    User user =null;
+	    try{
+	    	user = authenticationService.authenticate(email, password);
 	    }
-	    else if(!password.equals(user.getPassword())){
-	    	 throw new BadCredentialsException("Password is wrong.");	
+	    catch(javax.naming.AuthenticationException e){
+	    	throw new BadCredentialsException(e.getMessage());	
 	    }
 	    
 	    Collection<UserRole> roles = user.getRoles();

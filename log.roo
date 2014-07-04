@@ -319,3 +319,65 @@ module focus --moduleName sniffy-bo-core
 service type --interface ~.service.UserService --entity ~.model.User 
 repository jpa --interface ~.repository.UserRepository --entity ~.model.User
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-25 23:16:31
+module focus --moduleName sniffy-bo-web 
+controller class --class ~.controller.SearchRequestController 
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-27 16:13:34
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-27 16:14:18
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-27 19:49:06
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-27 19:49:31
+module focus --moduleName sniffy-bo-core 
+entity jpa --class ~.model.Device
+enum type --class ~.utils.DeviceClass
+focus --class ~.model.Device
+field string --fieldName uuid --unique yes --notNull yes 
+field enum --type ~.utils.DeviceClass --fieldName deviceClass
+field string --fieldName pushToken
+focus --class ~.model.User
+field set --fieldName devices --type ~.model.Device --cardinality MANY_TO_MANY 
+focus --class ~.model.Device 
+field set --fieldName users --type ~.model.User --cardinality MANY_TO_MANY --mappedBy devices
+focus --class ~.model.Product
+field boolean --fieldName deleted 
+focus --class ~.model.SearchRequest
+field string --fieldName productName 
+// [failed] field reference --fieldName user --type ~.model.User --cardinality MANY_TO_ONE 
+field reference --fieldName owner --type ~.model.User --cardinality MANY_TO_ONE 
+field reference --fieldName device --type ~.model.Device --cardinality MANY_TO_ONE 
+focus --class ~.model.User
+field string --fieldName login --unique true
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-28 13:23:28
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-28 19:54:31
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-28 21:06:30
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-29 08:08:53
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-30 12:39:56
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-04 20:44:03
+module focus --moduleName sniffy-bo-core 
+service type --entity ~.model.SearchRequest --interface ~.service.SearchRequestService
+focus --class ~.model.SearchRequest
+// [failed] field reference --fieldName result --type ~.model.Product --cardinality MANY_TO_ONE 
+field reference --fieldName searchResult --type ~.model.Product --cardinality MANY_TO_ONE 
+focus --class ~.model.Product
+field set --fieldName searchRequests --type ~.model.SearchRequest --cardinality ONE_TO_MANY --mappedBy searchResult
+enum type --class ~.utils.SearchRequestStatus
+focus --class ~.model.SearchRequest
+field enum --type ~.utils.SearchRequestStatus --fieldName status
+repository jpa --interface ~.repository.SearchRequestRepository --entity ~.model.SearchRequest
+service type --interface ~.service.DeviceService --entity ~.model.Device
+repository jpa --interface ~.repository.DeviceRepository --entity ~.model.Device
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-06 08:22:31
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-06 08:24:50
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-06 20:04:31
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-07 13:06:05
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-07 13:06:20
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-07 21:00:39
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-07 21:06:04
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-07 21:06:31
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-07 21:06:35
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-16 21:34:31

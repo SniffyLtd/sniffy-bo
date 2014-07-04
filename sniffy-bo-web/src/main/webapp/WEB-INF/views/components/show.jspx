@@ -9,5 +9,7 @@
         <field:display field="lastUpdate" id="s_com_brand_sniffy_bo_core_model_Component_lastUpdate" object="${component}" render="false" z="user-managed"/>
         <field:display field="description" id="s_com_brand_sniffy_bo_core_model_Component_description" object="${component}" z="oVpFLaGt2VG4Il23yJqSTJ+WmVg="/>
         <field:display field="tmp" id="s_com_brand_sniffy_bo_core_model_Component_tmp" object="${component}" z="/Ac8mq8XITEctZPXvW6e2h3tjRo="/>
+        <field:display field="deleted" id="s_com_brand_sniffy_bo_core_model_Component_deleted" object="${component}" render="false" z="user-managed"/>
+        <field:display field="creationTime" id="s_com_brand_sniffy_bo_core_model_Component_creationTime" object="${component}" render="false" z="user-managed"/>
     </page:show>
 </div>

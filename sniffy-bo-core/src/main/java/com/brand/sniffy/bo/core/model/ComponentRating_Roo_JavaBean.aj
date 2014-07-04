@@ -41,6 +41,22 @@ privileged aspect ComponentRating_Roo_JavaBean {
         this.lastUpdate = lastUpdate;
     }
     
+    public long ComponentRating.getCreationTime() {
+        return this.creationTime;
+    }
+    
+    public void ComponentRating.setCreationTime(long creationTime) {
+        this.creationTime = creationTime;
+    }
+    
+    public Boolean ComponentRating.getDeleted() {
+        return this.deleted;
+    }
+    
+    public void ComponentRating.setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+    
     public Set<Component> ComponentRating.getComponents() {
         return this.components;
     }

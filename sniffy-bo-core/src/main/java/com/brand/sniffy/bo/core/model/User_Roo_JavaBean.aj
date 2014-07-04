@@ -3,9 +3,11 @@
 
 package com.brand.sniffy.bo.core.model;
 
+import com.brand.sniffy.bo.core.model.Device;
 import com.brand.sniffy.bo.core.model.User;
 import com.brand.sniffy.bo.core.utils.UserRole;
 import java.util.List;
+import java.util.Set;
 
 privileged aspect User_Roo_JavaBean {
     
@@ -49,20 +51,20 @@ privileged aspect User_Roo_JavaBean {
         this.password = password;
     }
     
-    public String User.getApiKey() {
-        return this.apiKey;
-    }
-    
-    public void User.setApiKey(String apiKey) {
-        this.apiKey = apiKey;
-    }
-    
-    public List<String> User.getDevices() {
+    public Set<Device> User.getDevices() {
         return this.devices;
     }
     
-    public void User.setDevices(List<String> devices) {
+    public void User.setDevices(Set<Device> devices) {
         this.devices = devices;
+    }
+    
+    public String User.getLogin() {
+        return this.login;
+    }
+    
+    public void User.setLogin(String login) {
+        this.login = login;
     }
     
 }

@@ -10,6 +10,7 @@
             <table:column id="c_com_brand_sniffy_bo_core_model_Product_category" property="category" z="fTQhnJmdjVXn+smOuz0+HoTP85k="/>
             <table:column id="c_com_brand_sniffy_bo_core_model_Product_components" property="components" render="false" z="user-managed"/>
             <table:column id="c_com_brand_sniffy_bo_core_model_Product_producer" property="producer" render="false" z="user-managed"/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Product_equivalentNames" property="equivalentNames" render="false" z="user-managed"/>
         </table:table>
     </page:list>
 </div>

@@ -176,7 +176,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Product, String> ApplicationConversionServiceFactoryBean.getProductToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.brand.sniffy.bo.core.model.Product, java.lang.String>() {
             public String convert(Product product) {
-                return new StringBuilder().append(product.getBarcode()).append(' ').append(product.getName()).append(' ').append(product.getDescription()).append(' ').append(product.getLastUpdate()).toString();
+                return new StringBuilder().append(product.getBarcode()).append(' ').append(product.getName()).append(' ').append(product.getEquivalentNames()).append(' ').append(product.getDescription()).toString();
             }
         };
     }

@@ -6,5 +6,9 @@
         <context:include-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
     </context:component-scan>
     
-    
+    <mvc:annotation-driven>
+      <mvc:argument-resolvers>
+          <bean class="com.brand.sniffy.bo.mobile.handler.UserDeviceArgumentResolver" />
+      </mvc:argument-resolvers>
+    </mvc:annotation-driven>
 </beans>

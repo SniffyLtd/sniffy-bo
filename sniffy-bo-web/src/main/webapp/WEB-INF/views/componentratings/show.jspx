@@ -7,5 +7,7 @@
         <field:display field="title" id="s_com_brand_sniffy_bo_core_model_ComponentRating_title" object="${componentrating}" z="YD+byvn0xALjcpFpOq7CcuvFelA="/>
         <field:display field="description" id="s_com_brand_sniffy_bo_core_model_ComponentRating_description" object="${componentrating}" z="8c5CG4ongGcBCHeEo5CM3bjnZ3Q="/>
         <field:display field="lastUpdate" id="s_com_brand_sniffy_bo_core_model_ComponentRating_lastUpdate" object="${componentrating}" render="false" z="user-managed"/>
+        <field:display field="deleted" id="s_com_brand_sniffy_bo_core_model_ComponentRating_deleted" object="${componentrating}" render="false" z="user-managed"/>
+        <field:display field="creationTime" id="s_com_brand_sniffy_bo_core_model_ComponentRating_creationTime" object="${componentrating}" render="false" z="user-managed"/>
     </page:show>
 </div>

@@ -3,9 +3,7 @@
 
 package com.brand.sniffy.bo.core.service;
 
-import com.brand.sniffy.bo.core.model.ComponentRating;
 import com.brand.sniffy.bo.core.service.ComponentRatingServiceImpl;
-import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,25 +12,5 @@ privileged aspect ComponentRatingServiceImpl_Roo_Service {
     declare @type: ComponentRatingServiceImpl: @Service;
     
     declare @type: ComponentRatingServiceImpl: @Transactional;
-    
-    public long ComponentRatingServiceImpl.countAllComponentRatings() {
-        return componentRatingRepository.count();
-    }
-    
-    public void ComponentRatingServiceImpl.deleteComponentRating(ComponentRating componentRating) {
-        componentRatingRepository.delete(componentRating);
-    }
-    
-    public ComponentRating ComponentRatingServiceImpl.findComponentRating(Long id) {
-        return componentRatingRepository.findOne(id);
-    }
-    
-    public List<ComponentRating> ComponentRatingServiceImpl.findAllComponentRatings() {
-        return componentRatingRepository.findAll();
-    }
-    
-    public List<ComponentRating> ComponentRatingServiceImpl.findComponentRatingEntries(int firstResult, int maxResults) {
-        return componentRatingRepository.findAll(new org.springframework.data.domain.PageRequest(firstResult / maxResults, maxResults)).getContent();
-    }
     
 }

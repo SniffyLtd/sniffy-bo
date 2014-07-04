@@ -8,6 +8,8 @@
             <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_title" property="title" z="fFz7RHEMCE9mh1S/UO7xxdRXPC0="/>
             <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_description" property="description" render="false" z="user-managed"/>
             <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_lastUpdate" property="lastUpdate" render="false" z="user-managed"/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_deleted" property="deleted" render="false" z="user-managed"/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_ComponentRating_creationTime" property="creationTime" render="false" z="user-managed"/>
         </table:table>
     </page:list>
 </div>

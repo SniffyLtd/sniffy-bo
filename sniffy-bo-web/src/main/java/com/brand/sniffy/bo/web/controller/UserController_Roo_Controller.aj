@@ -4,6 +4,7 @@
 package com.brand.sniffy.bo.web.controller;
 
 import com.brand.sniffy.bo.core.model.User;
+import com.brand.sniffy.bo.core.service.DeviceService;
 import com.brand.sniffy.bo.core.service.UserService;
 import com.brand.sniffy.bo.core.utils.UserRole;
 import com.brand.sniffy.bo.web.controller.UserController;
@@ -25,6 +26,9 @@ privileged aspect UserController_Roo_Controller {
     
     @Autowired
     UserService UserController.userService;
+    
+    @Autowired
+    DeviceService UserController.deviceService;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String UserController.create(@Valid User user, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -93,6 +97,7 @@ privileged aspect UserController_Roo_Controller {
     
     void UserController.populateEditForm(Model uiModel, User user) {
         uiModel.addAttribute("user", user);
+        uiModel.addAttribute("devices", deviceService.findAllDevices());
         uiModel.addAttribute("userroles", Arrays.asList(UserRole.values()));
     }
     

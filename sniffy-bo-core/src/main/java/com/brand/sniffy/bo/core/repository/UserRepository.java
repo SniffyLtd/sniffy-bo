@@ -8,4 +8,6 @@ public interface UserRepository {
 	User findByEmail(String email);
 
 	User findByDevices(String device);
+
+	User findByLogin(String login);
 }

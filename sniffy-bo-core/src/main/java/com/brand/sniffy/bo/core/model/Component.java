@@ -12,7 +12,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord
-@RooJson
+@RooJson(deepSerialize=false)
 public class Component {
 
     private static final String ID_FIELD = "id";
@@ -35,13 +35,19 @@ public class Component {
     private String equivalentNames;
 
     private long lastUpdate;
+    
+    private long creationTime;
+    
+    private Boolean deleted;
 
     public JSONObject toJson() throws JSONException {
         JSONObject component = new JSONObject();
         component.put(ID_FIELD, this.getId());
         component.put(NAME_FIELD, name);
         component.put(EQUIVALENT_NAMES_FIELD, equivalentNames);
-        component.put(RATING_FIELD, rating.getId());
+        if(rating != null){
+        	component.put(RATING_FIELD, rating.getId());
+        }
         return component;
     }
 

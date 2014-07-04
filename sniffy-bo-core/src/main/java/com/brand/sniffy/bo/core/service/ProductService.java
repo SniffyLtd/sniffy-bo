@@ -1,4 +1,6 @@
 package com.brand.sniffy.bo.core.service;
+import java.util.List;
+
 import org.springframework.roo.addon.layers.service.RooService;
 
 import com.brand.sniffy.bo.core.model.Product;
@@ -14,6 +16,14 @@ public interface ProductService {
 
 	public Product findByName(String name);
 
-	public Product findOne(long id);
+	public void deleteProduct(Product product);
+	
+	public long countAllProducts();    
+	
+    public Product findProduct(Long id);
+    
+    public List<Product> findAllProducts(); 
+    
+    public List<Product> findProductEntries(int firstResult, int maxResults);
 
 }

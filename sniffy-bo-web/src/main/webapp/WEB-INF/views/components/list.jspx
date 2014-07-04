@@ -10,6 +10,7 @@
             <table:column id="c_com_brand_sniffy_bo_core_model_Component_lastUpdate" property="lastUpdate" render="false" z="user-managed"/>
             <table:column id="c_com_brand_sniffy_bo_core_model_Component_description" property="description" render="false" z="user-managed"/>
             <table:column id="c_com_brand_sniffy_bo_core_model_Component_tmp" property="tmp" render="false" z="user-managed"/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_Component_creationTime" property="creationTime" render="false" z="user-managed"/>
         </table:table>
     </page:list>
 </div>

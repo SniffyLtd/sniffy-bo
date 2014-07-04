@@ -34,5 +34,9 @@
             <menu:item id="i_user_new" messageCode="global_menu_new" url="/users?form" z="Zv1m8u2rG+JFKcvJ+AHVVK0ey24="/>
             <menu:item id="i_user_list" messageCode="global_menu_list" url="/users?page=1&amp;size=${empty param.size ? 10 : param.size}" z="4MY4uybxa60Q1G2rlI5bOwg+sm0="/>
         </menu:category>
+        <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
+            <menu:item id="i_controller__searchrequestindex_id" messageCode="global_generic" url="/searchrequest/index" z="ple2Z4vKjCfFlj4zcReTw6hgzjU="/>
+            <menu:item id="i_custom_menu_item_search_requests_list_id" url="/searchrequest" />
+        </menu:category>
     </menu:menu>
 </div>

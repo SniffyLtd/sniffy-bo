@@ -12,6 +12,19 @@ public interface ComponentRatingService {
 	
 	public ComponentRating updateComponentRating(ComponentRating componentRating);
 
-	public List<ComponentRating> findComponentRatingsChangedAfter(
-			Long lastSynchronization);
+	public List<ComponentRating> findComponentsFromTimeRange(
+			Long from, Long to);
+
+	long countAllComponentRatings();
+
+	void deleteComponentRating(ComponentRating componentRating);
+
+	ComponentRating findComponentRating(Long id);
+
+	List<ComponentRating> findAllComponentRatings();
+
+	List<ComponentRating> findComponentRatingEntries(int firstResult,
+			int maxResults);
+
+	List<ComponentRating> findComponentsToDeleteFromTimeRange(Long from, Long to);
 }

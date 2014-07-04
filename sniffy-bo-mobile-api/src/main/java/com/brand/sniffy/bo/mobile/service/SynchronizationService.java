@@ -1,12 +1,10 @@
 package com.brand.sniffy.bo.mobile.service;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.brand.sniffy.bo.mobile.domain.SynchronizationRequest;
+import com.brand.sniffy.bo.mobile.domain.SynchronizationResult;
 
 
 public interface SynchronizationService {
 	
-	JSONObject initialSynchronization() throws JSONException;
-
-	JSONObject differentialSynchronization(Long lastSynchronizationDate) throws JSONException;
+	SynchronizationResult performSynchronization(SynchronizationRequest request);
 }

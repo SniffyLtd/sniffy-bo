@@ -57,7 +57,7 @@ public class Producer {
         json.put(PHONE_FIELD, phone);
         json.put(FAX_FIELD, fax);
         json.put(EMAIL_FIELD, email);
-        json.put(COUNTRY_ID_FIELD, country.getId());
+        json.put(COUNTRY_ID_FIELD, country != null ? country.toJson() : null);
         json.put(CODE_FIELD, code);
         return json;
     }

@@ -7,6 +7,7 @@ import com.brand.sniffy.bo.core.model.Category;
 import com.brand.sniffy.bo.core.model.Component;
 import com.brand.sniffy.bo.core.model.Producer;
 import com.brand.sniffy.bo.core.model.Product;
+import com.brand.sniffy.bo.core.model.SearchRequest;
 import java.util.Set;
 
 privileged aspect Product_Roo_JavaBean {
@@ -25,6 +26,14 @@ privileged aspect Product_Roo_JavaBean {
     
     public void Product.setName(String name) {
         this.name = name;
+    }
+    
+    public String Product.getEquivalentNames() {
+        return this.equivalentNames;
+    }
+    
+    public void Product.setEquivalentNames(String equivalentNames) {
+        this.equivalentNames = equivalentNames;
     }
     
     public String Product.getDescription() {
@@ -67,12 +76,28 @@ privileged aspect Product_Roo_JavaBean {
         this.lastUpdate = lastUpdate;
     }
     
-    public String Product.getEquivalentNames() {
-        return this.equivalentNames;
+    public long Product.getCreationTime() {
+        return this.creationTime;
     }
     
-    public void Product.setEquivalentNames(String equivalentNames) {
-        this.equivalentNames = equivalentNames;
+    public void Product.setCreationTime(long creationTime) {
+        this.creationTime = creationTime;
+    }
+    
+    public Boolean Product.getDeleted() {
+        return this.deleted;
+    }
+    
+    public void Product.setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+    
+    public Set<SearchRequest> Product.getSearchRequests() {
+        return this.searchRequests;
+    }
+    
+    public void Product.setSearchRequests(Set<SearchRequest> searchRequests) {
+        this.searchRequests = searchRequests;
     }
     
 }

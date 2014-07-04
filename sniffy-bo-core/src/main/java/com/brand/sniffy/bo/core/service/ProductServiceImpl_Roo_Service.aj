@@ -3,9 +3,7 @@
 
 package com.brand.sniffy.bo.core.service;
 
-import com.brand.sniffy.bo.core.model.Product;
 import com.brand.sniffy.bo.core.service.ProductServiceImpl;
-import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,25 +12,5 @@ privileged aspect ProductServiceImpl_Roo_Service {
     declare @type: ProductServiceImpl: @Service;
     
     declare @type: ProductServiceImpl: @Transactional;
-    
-    public long ProductServiceImpl.countAllProducts() {
-        return productRepository.count();
-    }
-    
-    public void ProductServiceImpl.deleteProduct(Product product) {
-        productRepository.delete(product);
-    }
-    
-    public Product ProductServiceImpl.findProduct(Long id) {
-        return productRepository.findOne(id);
-    }
-    
-    public List<Product> ProductServiceImpl.findAllProducts() {
-        return productRepository.findAll();
-    }
-    
-    public List<Product> ProductServiceImpl.findProductEntries(int firstResult, int maxResults) {
-        return productRepository.findAll(new org.springframework.data.domain.PageRequest(firstResult / maxResults, maxResults)).getContent();
-    }
     
 }

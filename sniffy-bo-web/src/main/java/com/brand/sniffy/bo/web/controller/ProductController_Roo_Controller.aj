@@ -8,6 +8,7 @@ import com.brand.sniffy.bo.core.service.CategoryService;
 import com.brand.sniffy.bo.core.service.ComponentService;
 import com.brand.sniffy.bo.core.service.ProducerService;
 import com.brand.sniffy.bo.core.service.ProductService;
+import com.brand.sniffy.bo.core.service.SearchRequestService;
 import com.brand.sniffy.bo.web.controller.ProductController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +36,9 @@ privileged aspect ProductController_Roo_Controller {
     
     @Autowired
     ProducerService ProductController.producerService;
+    
+    @Autowired
+    SearchRequestService ProductController.searchRequestService;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String ProductController.create(@Valid Product product, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -106,6 +110,7 @@ privileged aspect ProductController_Roo_Controller {
         uiModel.addAttribute("categorys", categoryService.findAllCategorys());
         uiModel.addAttribute("components", componentService.findAllComponents());
         uiModel.addAttribute("producers", producerService.findAllProducers());
+        uiModel.addAttribute("searchrequests", searchRequestService.findAllSearchRequests());
     }
     
     String ProductController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

@@ -9,7 +9,7 @@
             <table:column id="c_com_brand_sniffy_bo_core_model_User_email" property="email" z="apVInO0s5TQs2NQV6kPOy7Jboi8="/>
             <table:column id="c_com_brand_sniffy_bo_core_model_User_roles" property="roles" z="TuJLEDFD2VowmCLiekN9uMybv6U="/>
             <table:column id="c_com_brand_sniffy_bo_core_model_User_password" property="password" z="3pdgTuneEDKdDpsnhxSGH16VUKY="/>
-            <table:column id="c_com_brand_sniffy_bo_core_model_User_apiKey" property="apiKey" z="4XB0KD9viL+7FF3mD3UoOHcoJb4="/>
+            <table:column id="c_com_brand_sniffy_bo_core_model_User_devices" property="devices" z="bm8cqB1T1dsMTD9k4srnrMdexDE="/>
         </table:table>
     </page:list>
 </div>

@@ -1,5 +1,7 @@
 package com.brand.sniffy.bo.mobile.service;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
@@ -13,22 +15,20 @@ import com.brand.sniffy.bo.core.model.Category;
 import com.brand.sniffy.bo.core.model.Component;
 import com.brand.sniffy.bo.core.model.ComponentRating;
 import com.brand.sniffy.bo.core.model.Country;
+import com.brand.sniffy.bo.core.model.Device;
+import com.brand.sniffy.bo.core.model.SearchRequest;
+import com.brand.sniffy.bo.core.model.User;
 import com.brand.sniffy.bo.core.service.CategoryService;
 import com.brand.sniffy.bo.core.service.ComponentRatingService;
 import com.brand.sniffy.bo.core.service.ComponentService;
 import com.brand.sniffy.bo.core.service.CountryService;
+import com.brand.sniffy.bo.mobile.domain.SearchResult;
+import com.brand.sniffy.bo.mobile.domain.SynchronizationRequest;
+import com.brand.sniffy.bo.mobile.domain.SynchronizationResult;
 
 
 @Service
 public class SynchronizationServiceImpl implements SynchronizationService{
-
-	private static final String COMPONENT_RATINGS_FIELD = "componentRatings";
-
-	private static final String COMPONENTS_FIELD = "components";
-
-	private static final String COUNTRIES_FIELD = "conutries";
-
-	private static final String CATEGORIES_FIELD = "categories";
 
 	@Autowired
 	private ComponentService componentService;
@@ -37,74 +37,35 @@ public class SynchronizationServiceImpl implements SynchronizationService{
 	private ComponentRatingService componentRatingService;
 	
 	@Autowired
-	private CountryService countryService;
-	
-	@Autowired
-	private CategoryService categoryService;
-	
-	public JSONObject initialSynchronization() throws JSONException {
-		JSONObject result = new JSONObject();
-		List<ComponentRating> ratings = componentRatingService.findAllComponentRatings();
-		JSONArray ratingsJson = new JSONArray();
-		for(ComponentRating rating : ratings){
-			ratingsJson.put(rating.toJson());
-		}
-		result.put(COMPONENT_RATINGS_FIELD, ratingsJson);
-		
-		List<Component> components = componentService.findAllComponents();
-		JSONArray componentsJson = new JSONArray();
-		for(Component component : components){
-			componentsJson.put(component.toJson());
-		}
-		result.put(COMPONENTS_FIELD, componentsJson);
-		
-		List<Country> countries = countryService.findAllCountrys();
-		JSONArray countriesJson = new JSONArray();
-		for(Country country : countries){
-			countriesJson.put(country.toJson());
-		}
-		result.put(COUNTRIES_FIELD, countriesJson);
-		
-		List<Category> categories = categoryService.findAllCategorys();
-		JSONArray categoriesJson = new JSONArray();
-		for(Category category : categories){
-			categoriesJson.put(category.toJson());
-		}
-		result.put(CATEGORIES_FIELD, categoriesJson);
-		return result;
-	}
+	private SearchService searchService;
 
 	@Override
-	public JSONObject differentialSynchronization(
-			Long lastSynchronization) throws JSONException {
-		JSONObject result = new JSONObject();
-		List<ComponentRating> ratings = componentRatingService.findComponentRatingsChangedAfter(lastSynchronization);
-		JSONArray ratingsJson = new JSONArray();
-		for(ComponentRating rating : ratings){
-			ratingsJson.put(rating.toJson());
-		}
-		result.put(COMPONENT_RATINGS_FIELD, ratingsJson);
+	public SynchronizationResult performSynchronization(SynchronizationRequest request){
+		SynchronizationResult result = new SynchronizationResult();
+		Long from = request.getLastSynchronizationDate();
+		Long to = new Date().getTime();
+		result.setSearchResults(resolveSearchRequests(request.getSearchRequests(), request.getUser(), request.getDevice()));
+		result.setComponentRatingsToUpdate(componentRatingService.findComponentsFromTimeRange(from, to));
+		result.setComponentRatingsToDelete(componentRatingService.findComponentsToDeleteFromTimeRange(from, to));
+		result.setComponentsToUpdate(componentService.findComponentsFromTimeRange(from, to));
+		result.setComponentsToDelete(componentService.findComponentsToDeleteFromTimeRange(from, to));
 		
-		List<Component> components = componentService.findComponentsChangedAfter(lastSynchronization);
-		JSONArray componentsJson = new JSONArray();
-		for(Component component : components){
-			componentsJson.put(component.toJson());
-		}
-		result.put(COMPONENTS_FIELD, componentsJson);
-		
-		List<Country> countries = countryService.findCountrysChangedAfter(lastSynchronization);
-		JSONArray countriesJson = new JSONArray();
-		for(Country country : countries){
-			countriesJson.put(country.toJson());
-		}
-		result.put(COUNTRIES_FIELD, countriesJson);
-		
-		List<Category> categories = categoryService.findCategorysChangedAfter(lastSynchronization);
-		JSONArray categoriesJson = new JSONArray();
-		for(Category category : categories){
-			categoriesJson.put(category.toJson());
-		}
-		result.put(CATEGORIES_FIELD, categoriesJson);
+		result.setSynchronizationDate(to);
 		return result;
+	}
+	
+	private List<SearchResult> resolveSearchRequests(List<SearchRequest> requests, User user, Device device){
+		
+		List<SearchResult> results = new ArrayList<SearchResult>();
+		for(SearchRequest request : requests){
+			request.setOwner(user);
+			request.setDevice(device);
+			
+			SearchResult result = searchService.resolveRequest(request);
+			if(result != null ){
+				results.add(result);
+			}
+		}
+		return results;
 	}
 }

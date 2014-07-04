@@ -1,5 +1,4 @@
 package com.brand.sniffy.bo.core.model;
-
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -13,6 +12,7 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.json.RooJson;
 import org.springframework.roo.addon.tostring.RooToString;
+import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
@@ -38,6 +38,8 @@ public class Product {
 
     private String name;
 
+    private String equivalentNames;
+
     private String description;
 
     @ManyToOne
@@ -52,8 +54,12 @@ public class Product {
     private Producer producer;
 
     private long lastUpdate;
+    
+    private long creationTime;
 
-    private String equivalentNames;
+    /**
+     */
+    private Boolean deleted;
 
     public JSONObject toJson() throws JSONException {
         JSONObject product = new JSONObject();
@@ -61,8 +67,8 @@ public class Product {
         product.put(NAME_FIELD, name);
         product.put(BARCODE_FIELD, barcode);
         product.put(DESCRIPTION_FIELD, description);
-        product.put(CATEGORY_ID_FIELD, category.getId());
-        product.put(PRODUCER_FIELD, producer.toJson());
+        product.put(CATEGORY_ID_FIELD, category != null ? category.toJson() : null);
+        product.put(PRODUCER_FIELD, producer != null ? producer.toJson() : null);
         JSONArray componentsIds = new JSONArray();
         for (Component component : components) {
             componentsIds.put(component.getId());
@@ -78,4 +84,9 @@ public class Product {
         }
         return name;
     }
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "searchResult")
+    private Set<SearchRequest> searchRequests = new HashSet<SearchRequest>();
 }
